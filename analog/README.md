@@ -27,7 +27,7 @@ analog/
 Individual circuit blocks, each self-contained with schematic, layout, and simulation testbench.
 
 ## top/
-Full assembled design connecting all blocks, with final GDS and LEF for handoff.
+Fully assembled top-level design connecting all blocks, with final GDS and LEF files. The final handoff version of the top-level design must be uploaded to `/src`.
 
 # Committing Guidelines
 

@@ -1,0 +1,54 @@
+** sch_path: /foss/designs/IDcomptest.sch
+**.subckt IDcomptest
+V1 VDD 0 3.3
+V2 INP 0 sin(0 1 150MEG)
+V3 INN 0 sin(0 1 150MEG 3.33n)
+V4 CLK 0 PULSE(0 3.3 0 50p 50p 10n 20n)
+X1 INP INN CLK VDD 0 vOUTP vOUTN vOUT comp_ideal
+**** begin user architecture code
+
+
+.subckt comp_ideal INP INN CLK VDD VSS vOUTP vOUTN vOUT
++ PARAMS:
++ av     = 1e5
++ vos    = 0
++ tau    = 50p
++ vclkth = 0.5
++ vhys   = 10m
++ vth    = 0.5
+
+* --- 1) unclamped linear decision target ---
+Btgt vtgt 0 V = 'av*(V(INP)-V(INN)-vos)'
+
+* --- 2) single-pole lag: R=1 ohm so that R*C = tau directly ---
+Rlag vtgt dec 1
+Clag dec 0 {tau}
+
+* --- 3) rail-to-rail saturation ---
+Bclamp clamped 0 V = 'min(V(VDD),max(V(VSS),V(dec)))'
+
+* --- 4) clock-gated sample & hold ---
+.model swmod SW(Ron=1 Roff=1e9 Vt={vclkth} Vh={vhys})
+S1 clamped held CLK VSS swmod
+Chold held 0 1p
+
+* --- differential analog outputs (already rail-clamped via 'held') ---
+Boutp vOUTP 0 V = 'V(held)'
+Boutn vOUTN 0 V = 'V(VDD)+V(VSS)-V(held)'
+
+* --- clean single-ended digital output for ideal SAR logic ---
+Bout vOUT 0 V = 'ternary_fcn(V(held) > (V(VDD)+V(VSS))*vth, V(VDD), V(VSS))'
+
+.ends comp_ideal
+
+.tran 10n 200n
+.control
+run
+plot v(voutp) v(clk) v(INN) v(INP)
+.endc
+.end
+
+
+**** end user architecture code
+**.ends
+.end

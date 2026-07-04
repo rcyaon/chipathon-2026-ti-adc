@@ -1,0 +1,54 @@
+# 1. Design Definition
+DESIGN_NAME: sar_adc_logic
+VERILOG_FILES:
+  - dir::../../src/sar_adc_logic/sar_adc_logic.sv # Ensure this points to your actual file location
+
+# 2. Clock Constraints
+CLOCK_PORT: clk_i
+CLOCK_PERIOD: 40.0 # 25 MHz
+
+# 3. Power and Ground Nets
+VDD_NETS:
+  - VDD
+GND_NETS:
+  - VSS
+
+# 4. Floorplanning (Auto-sizing)
+# 'relative' tells the tool to calculate the die area automatically based on gate count.
+FP_SIZING: relative
+FP_CORE_UTIL: 40
+
+# 5. Power Distribution Network (PDN)
+# We want standard internal power straps, NOT top-level pad connections.
+PDN_CORE_RING: False
+PDN_ENABLE_PINS: True # Forces the tool to create VDD/VSS pins on the macro boundary
+
+PNR_SDC_FILE: dir::sar_adc_logic.sdc
+SIGNOFF_SDC_FILE: dir::sar_adc_logic.sdc
+
+# 6. Custom 3.3V Timing Corner
+# Re-declaring all four corners (original three + new 3v30) since LIB is a
+# dict-typed variable and a partial override may drop the PDK's defaults.
+LIB:
+  "*_tt_025C_5v00":
+    - "/Users/shreyas/Projects/chipathon-2026-ti-adc/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_5v00.lib"
+  "*_ff_n40C_5v50":
+    - "/Users/shreyas/Projects/chipathon-2026-ti-adc/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_5v50.lib"
+  "*_ss_125C_4v50":
+    - "/Users/shreyas/Projects/chipathon-2026-ti-adc/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_4v50.lib"
+  "*_tt_025C_3v30":
+    - "/Users/shreyas/Projects/chipathon-2026-ti-adc/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib"
+
+STA_CORNERS:
+  - nom_tt_025C_5v00
+  - nom_ss_125C_4v50
+  - nom_ff_n40C_5v50
+  - min_tt_025C_5v00
+  - min_ss_125C_4v50
+  - min_ff_n40C_5v50
+  - max_tt_025C_5v00
+  - max_ss_125C_4v50
+  - max_ff_n40C_5v50
+  - nom_tt_025C_3v30
+
+DEFAULT_CORNER: nom_tt_025C_3v30

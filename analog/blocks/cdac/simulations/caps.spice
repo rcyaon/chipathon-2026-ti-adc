@@ -1,0 +1,78 @@
+** sch_path: /foss/designs/cdac/caps.sch
+**.subckt caps Vin GND VREF Vx phi_s VDD Dx_b<0> Dx<0> Dx_b<1> Dx_b<2> Dx_b<3> Dx_b<4> Dx_b<5> Dx_b<6> Dx_b<7> Dx_b<8> Dx_b<9>
+*+ Dx<1> Dx<2> Dx<3> Dx<4> Dx<5> Dx<6> Dx<7> Dx<8> Dx<9> Vx_lsb
+*.ipin Vin
+*.ipin GND
+*.ipin VREF
+*.opin Vx
+*.ipin phi_s
+*.ipin VDD
+*.ipin Dx_b<0>
+*.ipin Dx<0>
+*.ipin Dx_b<1>
+*.ipin Dx_b<2>
+*.ipin Dx_b<3>
+*.ipin Dx_b<4>
+*.ipin Dx_b<5>
+*.ipin Dx_b<6>
+*.ipin Dx_b<7>
+*.ipin Dx_b<8>
+*.ipin Dx_b<9>
+*.ipin Dx<1>
+*.ipin Dx<2>
+*.ipin Dx<3>
+*.ipin Dx<4>
+*.ipin Dx<5>
+*.ipin Dx<6>
+*.ipin Dx<7>
+*.ipin Dx<8>
+*.ipin Dx<9>
+*.opin Vx_lsb
+XC1 net2 Vx_lsb cap_mim_2f0fF c_width=4e-6 c_length=4e-6 m=1
+XC2 net1 Vx_lsb cap_mim_2f0fF c_width=4e-6 c_length=4e-6 m=1
+XC3 net3 Vx_lsb cap_mim_2f0fF c_width=4e-6 c_length=4e-6 m=2
+XC4 net4 Vx_lsb cap_mim_2f0fF c_width=4e-6 c_length=4e-6 m=4
+XC5 net5 Vx_lsb cap_mim_2f0fF c_width=4e-6 c_length=4e-6 m=8
+XC6 net6 Vx cap_mim_2f0fF c_width=4e-6 c_length=4e-6 m=1
+XC7 net7 Vx cap_mim_2f0fF c_width=4e-6 c_length=4e-6 m=1
+XC8 net8 Vx cap_mim_2f0fF c_width=4e-6 c_length=4e-6 m=2
+XC9 net9 Vx cap_mim_2f0fF c_width=4e-6 c_length=4e-6 m=4
+XC10 net10 Vx cap_mim_2f0fF c_width=4e-6 c_length=4e-6 m=8
+XC11 Vx_lsb Vx cap_mim_2f0fF c_width=4.13e-6 c_length=4.13e-6 m=1
+x1 VDD Dx<0> Dx_b<0> phi_s VREF Vin net2 GND transistors
+x2 VDD Dx<1> Dx_b<1> phi_s VREF Vin net1 GND transistors
+x3 VDD Dx<4> Dx_b<4> phi_s VREF Vin net5 GND transistors
+x4 VDD Dx<2> Dx_b<2> phi_s VREF Vin net3 GND transistors
+x5 VDD Dx<3> Dx_b<3> phi_s VREF Vin net4 GND transistors
+x6 VDD Dx<5> Dx_b<5> phi_s VREF Vin net6 GND transistors
+x8 VDD Dx<7> Dx_b<7> phi_s VREF Vin net8 GND transistors
+x9 VDD Dx<6> Dx_b<6> phi_s VREF Vin net7 GND transistors
+x10 VDD Dx<8> Dx_b<8> phi_s VREF Vin net9 GND transistors
+x11 VDD Dx<9> Dx_b<9> phi_s VREF Vin net10 GND transistors
+**.ends
+
+* expanding   symbol:  cdac/transistors.sym # of pins=8
+** sym_path: /foss/designs/cdac/transistors.sym
+** sch_path: /foss/designs/cdac/transistors.sch
+.subckt transistors VDD Dx Dx_b phi_s VREF Vin sw_node GND
+*.ipin Vin
+*.ipin VREF
+*.opin sw_node
+*.ipin GND
+*.ipin Dx
+*.ipin Dx_b
+*.ipin phi_s
+*.ipin VDD
+XM3 sw_node Dx VREF GND nfet_03v3 L=0.28u W=0.22u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM4 sw_node Dx_b VREF VDD pfet_03v3 L=0.28u W=0.22u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM6 GND Dx_b sw_node GND nfet_03v3 L=0.28u W=0.22u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM7 GND Dx sw_node VDD pfet_03v3 L=0.28u W=0.22u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM1 Vin phi_s sw_node GND nfet_03v3 L=0.28u W=0.22u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+.ends
+
+.end

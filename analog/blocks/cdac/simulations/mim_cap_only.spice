@@ -1,0 +1,1092 @@
+*
+*******************************************************************************************************
+*                Resistor Models
+*                ----------------------
+*
+*  Temperature : -40, 0, 25, 50, 75, 100 and 125C.
+*
+*  The resistor models were generated from the resistor characterization reports R-EZ-ER-557 Rev.1B or
+*  refer to resistor_VCR document attached in the lotus notes document. The user is advised to follow
+*  the instructions on the usage and understand the limitations of the models documented in this report.
+*  In particular the user should take note of the following :
+*
+*  a. The parameters for each model were extracted from test structures with various dimensions.
+*     The user should therefore take note of this limitation when extending design & simulation
+*     beyond the test conditions.
+*
+*  b. The voltage coefficients (r_vc1 and r_vc2) are set to zero by default in each model.
+*     If the need arise, the user should consult the resistor characterization report for the
+*     appropriate values to use.
+*
+*  c. The Poly-STI-substrate capacitance parameters are obtained from YI-141-IA001 Rev. 1B.
+*
+*  The models included in this release are as follows :
+*
+*    Model Name         Description
+*    ----------         -----------
+*
+*    nplus_u            Model for 3-terminal unsalicidedn+ diffusion resistor
+*    pplus_u            Model for 3-terminal unsalicidedP+ diffusion resistor
+*    nplus_s            Model for 3-terminal salicided N+ diffusion resistor
+*    pplus_s            Model for 3-terminal salicided P+ diffusion resistor
+*    nwell              Model for 3-terminal nwell resistor under STI
+*    npolyf_u           Model for 3-terminal unsalicidedn+ poly resistor
+*    ppolyf_u           Model for 3-terminal unsalicided p+ poly resistor
+*    npolyf_s           Model for 3-terminal salicided n+ poly resistor
+*    ppolyf_s           Model for 3-terminal salicided p+ poly resistor
+*    ppolyf_u_1k        Model for 3-terminal 1k high-Rs p+ poly resistor on field oxide
+*    ppolyf_u_2k        Model for 3-terminal 2k high-Rs p+ poly resistor on field oxide
+*    ppolyf_u_1k_6p0    Model for 3-terminal 1k high-Rs p+ poly resistor on field oxide (6.0V area)
+*    ppolyf_u_2k_6p0    Model for 3-terminal 2k high-Rs p+ poly resistor on field oxide (6.0V area)
+*    ppolyf_u_3k        Model for 3-terminal 3k high-Rs p+ poly resistor on field oxide (3.3V & 6V area)
+*    rm1                Model for 2-terminal metal 1 resistor
+*    rm2                Model for 2-terminal metal 2 resistor
+*    rm3                Model for 2-terminal metal 3 resistor
+*    rm4                Model for 2-terminal metal 4 resistor
+*    tm6k               Model for 2-terminal top metal 6k resistor
+*    tm9k               Model for 2-terminal top metal 9k resistor
+*    tm30k              Model for 2-terminal top metal 30k resistor
+*******************************************************************************************************
+.LIB res
+* model for unsalicided n+ diffusion resistor
+.subckt nplus_u 1 2 3 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0='rsh_nplus_u*(1+(mc_rsh_nplus_u/(rsh_nplus_u))*res_mc_skew*sw_stat_global)'
++ r_dw='-5E-8*(1+ mc_dw_nplus_u*res_mc_skew*sw_stat_global)'
++ r_dl=2E-11
++ r_vc1=0
++ r_vc2=0
++ r_tc1=1.36E-3
++ r_tc2=6.5E-7
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+
+* + par_r=0.012608
+* + par_sqrtarea='sqrt(par*(r_l)*(r_w))'
+* + var_r='0.7071*par_r*1e-06/par_sqrtarea'
+* + mis_r=agauss(0, 0.1, 1)
+**** + mis_r=agauss(0, var_r, 1)
++ mis_r = 0
+
+* model for terminal resistor
+.model nplus_u_t r
++ rsh='18.5+ mc_rt_nplus_u*res_mc_skew*sw_stat_global'
++ tc1=8.5E-4
++ tc2=1.75E-6
++ tnom=25
+* model for substrate capacitor
+.model diode_nd2ps_03v3_r d
++ Level=3
++ Cj=0.00096797    
++ Mj=0.32071       
++ Pb=0.70172       
++ Cjsw=1.5663e-010   
++ Mjsw=0.1           
++ Php=0.8062        
++ Cta=0.0009438     
++ Ctp=0.00060474    
++ Tpb=0.0018129     
++ Tphp=5e-005        
++ Tlevc=1
++ Tref=25
+*-------------------
+* terminal 1
+rt1 1 11 nplus_u_t   l='s*1u' w=r_w dtemp=dtemp
+d1  3 1  diode_nd2ps_03v3_r  area='r_w*r_l/2' pj='r_w+2*r_l/2' dtemp=dtemp
+* body
+rb  11 21 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)*(1+mis_r*sw_stat_mismatch)'
+* terminal 2
+rt2 21 2 nplus_u_t   l='s*1u' w=r_w dtemp=dtemp
+d2  3 2  diode_nd2ps_03v3_r  area='r_w*r_l/2' pj='r_w+2*r_l/2' dtemp=dtemp
+*-------------------
+.ends nplus_u
+*******************************************************************************************************
+* model for unsalicided p+ diffusion resistor
+.subckt pplus_u 1 2 3 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0='rsh_pplus_u*(1+mc_rsh_pplus_u/(rsh_pplus_u)*res_mc_skew*sw_stat_global)'
++ r_dw='2.75E-8*(1+ mc_dw_pplus_u*res_mc_skew*sw_stat_global)'
++ r_dl=5.0E-11
++ r_vc1=0
++ r_vc2=0
++ r_tc1=1.375E-3
++ r_tc2=1E-6
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+
+* + par_r=0.0126
+* + par_sqrtarea='sqrt(par*(r_l)*(r_w))'
+* + var_r='0.7071*par_r*1e-06/par_sqrtarea'
+* + mis_r=agauss(0, 0.1, 1)
+** + mis_r=agauss(0, var_r, 1)
++ mis_r=0
+
+* model for terminal resistor
+.model pplus_u_t r
++ rsh='50+mc_rt_pplus_u*res_mc_skew*sw_stat_global'
++ tc1=-1.528E-3
++ tc2=0.7E-6
++ tnom=25
+* model for substrate capacitor
+.model diode_pd2nw_03v3 d
++ Level=3
++ Cj=0.00094344    
++ Mj=0.32084       
++ Pb=0.69939       
++ Cjsw=1.5078e-010   
++ Mjsw=0.05          
++ Php=0.8022        
++ Cta=0.00099187    
++ Ctp=0.00063483    
++ Tpb=0.0016906     
++ Tphp=0.0058423     
++ Tlevc=1
++ Tref=25
+*-------------------
+* terminal 1
+rt1 1 11 pplus_u_t   l='s*1u' w=r_w dtemp=dtemp
+d1  1 3  diode_pd2nw_03v3  area='r_w*r_l/2' pj='r_w+2*r_l/2' dtemp=dtemp
+* body
+rb  11 21 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)*(1+mis_r*sw_stat_mismatch)'
+* terminal 2
+rt2 21 2 pplus_u_t   l='s*1u' w=r_w dtemp=dtemp
+d2  2 3  diode_pd2nw_03v3  area='r_w*r_l/2' pj='r_w+2*r_l/2' dtemp=dtemp
+*-------------------
+.ends pplus_u
+*******************************************************************************************************
+* model for salicided n+ diffusion resistor
+.subckt nplus_s 1 2 3 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0='rsh_nplus_s*(1 + mc_rsh_nplus_s/(rsh_nplus_s)*res_mc_skew*sw_stat_global)'
++ r_dw='-1.25E-8*(1+mc_dw_nplus_s*res_mc_skew*sw_stat_global)'
++ r_dl=3.5E-11
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.3E-3
++ r_tc2=3E-7
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+* model for terminal resistor
+.model nplus_s_t r
++ rsh=6
++ tc1=1.43E-3
++ tc2=-0.27E-6
++ tnom=25
+* model for substrate capacitor
+.model diode_nd2ps_03v3_r d
++ Level=3
++ Cj=0.00096797    
++ Mj=0.32071       
++ Pb=0.70172       
++ Cjsw=1.5663e-010   
++ Mjsw=0.1           
++ Php=0.8062        
++ Cta=0.0009438     
++ Ctp=0.00060474    
++ Tpb=0.0018129     
++ Tphp=5e-005        
++ Tlevc=1
++ Tref=25
+*-------------------
+* terminal 1
+rt1 1 11 nplus_s_t   l='s*1u' w=r_w dtemp=dtemp
+d1  3 1  diode_nd2ps_03v3_r  area='r_w*r_l/2' pj='r_w+2*r_l/2' dtemp=dtemp
+* body
+rb  11 21 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)'
+* terminal 2
+rt2 21 2 nplus_s_t   l='s*1u' w=r_w dtemp=dtemp
+d2  3 2  diode_nd2ps_03v3_r  area='r_w*r_l/2' pj='r_w+2*r_l/2' dtemp=dtemp
+*-------------------
+.ends nplus_s
+*******************************************************************************************************
+* model for salicided p+ diffusion resistor
+.subckt pplus_s 1 2 3 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0='rsh_pplus_s*(1+ mc_rsh_pplus_s/(rsh_pplus_s)*res_mc_skew*sw_stat_global)'
++ r_dw='-5E-8*(1+mc_dw_pplus_s*res_mc_skew*sw_stat_global)'
++ r_dl=3.5E-11
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.375E-3
++ r_tc2=0.45E-6
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+* model for terminal resistor
+.model pplus_s_t r
++ rsh=6.5
++ tc1=1.565E-3
++ tc2=-0.028E-6
++ tnom=25
+* model for substrate capacitor
+.model diode_pd2nw_03v3 d
++ Level=3
++ Cj=0.00094344    
++ Mj=0.32084       
++ Pb=0.69939       
++ Cjsw=1.5078e-010   
++ Mjsw=0.05          
++ Php=0.8022        
++ Cta=0.00099187    
++ Ctp=0.00063483    
++ Tpb=0.0016906     
++ Tphp=0.0058423     
++ Tlevc=1
++ Tref=25
+*-------------------
+* terminal 1
+rt1 1 11 pplus_s_t   l='s*1u' w=r_w dtemp=dtemp
+d1  1 3  diode_pd2nw_03v3  area='r_w*r_l/2' pj='r_w+2*r_l/2' dtemp=dtemp
+* body
+rb  11 21 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)'
+* terminal 2
+rt2 21 2 pplus_s_t   l='s*1u' w=r_w dtemp=dtemp
+d2  2 3  diode_pd2nw_03v3  area='r_w*r_l/2' pj='r_w+2*r_l/2' dtemp=dtemp
+*-------------------
+.ends pplus_s
+*******************************************************************************************************
+* model for Nwell resistor under STI 
+.subckt nwell 1 2 3 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0   = rsh_nwell
++ r_dw     = 2.22E-7
++ r_dl     = 1.02E-8
++ r_vc1    = 0
++ r_vc2    = 0
++ r_tc1    = 2.285E-3
++ r_tc2    = 9.78E-6
++ r_tnom   = 25
++ r_l      = 's*(r_length-2*r_dl)'
++ r_w      = 'r_width-2*r_dw'
++ r_n      = 'r_l/r_w'
++ r_temp   = '1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+* model for terminal resistor
+.model nwell_t r
++ rsh      = 250
++ tc1      = 1.72E-3
++ tc2      = 9.34E-6
++ tnom     = 25
+* model for substrate capacitor
+.model nwp d
++ level    = 3
++ cj       = 0.00014917    
++ mj       = 0.33979       
++ pb       = 0.5755        
++ cjsw     = 5.8113e-010   
++ mjsw     = 0.2257        
++ php      = 0.55456       
++ cta      = 0.0023998     
++ ctp      = 0.0010977     
++ tpb      = 0.0027641     
++ tphp     = 0.0019629     
++ tlevc    = 1
++ tref     = 25
+*-------------------
+* terminal 1
+rt1 1 11 nwell_t   l='s*1u' w=r_w dtemp=dtemp
+d1  3 1  nwp  area='r_w*r_l/2' PJ= 'r_w+2*r_l/2' dtemp=dtemp
+* body
+rb  11 21 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)'
+* terminal 2
+rt2 21 2 nwell_t   l='s*1u' w=r_w dtemp=dtemp
+d2  3 2  nwp  area='r_w*r_l/2' PJ= 'r_w+2*r_l/2' dtemp=dtemp
+*-------------------
+.ends nwell
+*******************************************************************************************************
+*******************************************************************************************************
+* model for n+ poly on field oxide resistor
+.subckt npolyf_u 1 2 3 r_length=l r_width=w dtemp=0 par=1 s=1
+* model for body resistor
++ r_rsh0='rsh_npolyf_u*(1+mc_rsh_npolyf_u/(rsh_npolyf_u)*res_mc_skew*sw_stat_global)'
++ r_dw='0.0265e-6*(1+ mc_dw_npolyf_u*res_mc_skew*sw_stat_global)'
++ r_dl=8.48e-11
++ r_vc1=0
++ r_vc2=0
++ r_tc1=-1.4e-3
++ r_tc2=2.2E-6
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+
+* + par_r=0.05808
+* + par_sqrtarea='sqrt(par*(r_l)*(r_w))'
+* + var_r='0.7071*par_r*1e-06/par_sqrtarea'
+* + mis_r=agauss(0, 0.1, 1)
+** + mis_r=agauss(0, var_r, 1)
++ mis_r=0
+
+.model npolyf_u_body r
++ af=1.684
++ kf=3.6e-23
++ noise=1
+* model for terminal resistor
+.model npolyf_u_t r
++ rsh='40+ mc_rt_npolyf_u*res_mc_skew*sw_stat_global'
++ tc1=-0.735E-3
++ tc2=-1.7E-6
++ tnom=25
++ af=1.684
++ kf=3.6e-23
++ noise=1
+* model for substrate capacitor (pF/um2)
+.model fox_sub c
++ cox=8.85E-05
+*-------------------
+* terminal 1
+rt1 1 11 npolyf_u_t l='s*1u'  w=r_w dtemp=dtemp
+c1  1 3  fox_sub    l='r_l/2' w=r_w dtemp=dtemp
+* body
+rb  11 21 npolyf_u_body 
++r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)*(1+mis_r*sw_stat_mismatch)' l=r_l w=r_w dtemp=dtemp
+* terminal 2
+rt2 21 2 npolyf_u_t l='s*1u'      w=r_w dtemp=dtemp
+c2  2 3  fox_sub    l='r_l/2' w=r_w dtemp=dtemp
+*-------------------
+.ends npolyf_u
+*******************************************************************************************************
+* model for P+ poly on field oxide resistor
+.subckt ppolyf_u 1 2 3 r_length=l r_width=w dtemp=0 par=1 s=1
+* model for body resistor
++ r_rsh0='rsh_ppolyf_u*(1+mc_rsh_ppolyf_u/(rsh_ppolyf_u)*res_mc_skew*sw_stat_global)'
++ r_dw='2.55E-8*(1+ mc_dw_ppolyf_u*res_mc_skew*sw_stat_global)'
++ r_dl=2E-11
++ r_vc1=0
++ r_vc2=0
++ r_tc1=-0.9e-4
++ r_tc2=7E-7
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+
+* + par_r=0.021
+* + par_sqrtarea='sqrt(par*(r_l)*(r_w))'
+* + var_r='0.7071*par_r*1e-06/par_sqrtarea'
+* + mis_r=agauss(0, 0.1, 1)
+** + mis_r=agauss(0, var_r, 1)
++ mis_r = 0
+
+.model ppolyf_u_body r
++ af=1.79
++ kf=2.4E-23
++ noise=1
+* model for terminal resistor
+.model ppolyf_u_t r
++ rsh='60+ mc_rt_ppolyf_u*res_mc_skew*sw_stat_global'
++ tc1=-1.47E-3
++ tc2=0.82E-6
++ tnom=25
++ af=1.79
++ kf=2.4E-23
++ noise=1
+* model for substrate capacitor (pF/um2)
+.model fox_sub c
++ cox=8.85e-05
+*-------------------
+* terminal 1
+rt1 1 11 ppolyf_u_t l='s*1u'      w=r_w dtemp=dtemp
+c1  1 3  fox_sub    l='r_l/2' w=r_w dtemp=dtemp
+* body
+rb  11 21 ppolyf_u_body
++r='(r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n))*(1+mis_r*sw_stat_mismatch)' l=r_l w=r_w dtemp=dtemp
+* terminal 2
+rt2 21 2 ppolyf_u_t l='s*1u'      w=r_w dtemp=dtemp
+c2  2 3  fox_sub    l='r_l/2' w=r_w dtemp=dtemp
+*-------------------
+.ends ppolyf_u
+*******************************************************************************************************
+*******************************************************************************************************
+* model for salicided n+ poly over field oxide resistor
+.subckt npolyf_s 1 2 3 r_length=l r_width=w dtemp=0 par=1 s=1
+* model for body resistor
++ r_rsh0='rsh_npolyf_s*(1+mc_rsh_npolyf_s/(rsh_npolyf_s)*res_mc_skew*sw_stat_global)'
++ r_dw='6.5e-9*(1+mc_dw_npolyf_s*res_mc_skew*sw_stat_global)'
++ r_dl=1.5e-11
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.26e-3
++ r_tc2=0.25E-6
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+.model npolyf_s_body r
++ af=1.684
++ kf=3.6e-23
++ noise=1
+* model for terminal resistor
+.model npolyf_s_t r
++ rsh=5.5
++ tc1=1.28E-3
++ tc2=-0.5E-6
++ tnom=25
++ af=1.684
++ kf=3.6e-23
++ noise=1
+* model for substrate capacitor (pF/um2)
+.model fox_sub c
++ cox=8.85E-05
+*-------------------
+* terminal 1
+rt1 1 11 npolyf_s_t l='s*1u'      w=r_w dtemp=dtemp
+c1  1 3  fox_sub    l='r_l/2' w=r_w dtemp=dtemp
+* body
+rb  11 21 npolyf_s_body
++r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)' l=r_l w=r_w dtemp=dtemp
+* terminal 2
+rt2 21 2 npolyf_s_t l='s*1u'      w=r_w dtemp=dtemp
+c2  2 3  fox_sub    l='r_l/2' w=r_w dtemp=dtemp
+*-------------------
+.ends npolyf_s
+*******************************************************************************************************
+*******************************************************************************************************
+* model for salicided p+ poly over field oxide resistor
+.subckt ppolyf_s 1 2 3 r_length=l r_width=w dtemp=0 par=1 s=1
+* model for body resistor
++ r_rsh0='rsh_ppolyf_s*(1+mc_rsh_ppolyf_s/(rsh_ppolyf_s)*res_mc_skew*sw_stat_global)'
++ r_dw='7.5E-9*(1+mc_dw_ppolyf_s*res_mc_skew*sw_stat_global)'
++ r_dl=1.5E-10
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.245e-3
++ r_tc2=3.6E-7
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+.model ppolyf_s_body r
++ af=1.79
++ kf=2.4E-23
++ noise=1
+* model for terminal resistor
+.model ppolyf_s_t r
++ rsh=5
++ tc1=1.254E-3
++ tc2=-0.27E-6
++ tnom=25
++ af=1.79
++ kf=2.4E-23
++ noise=1
+* model for substrate capacitor (pF/um2)
+.model fox_sub c
++ cox=8.85e-05
+*-------------------
+* terminal 1
+rt1 1 11 ppolyf_s_t l='s*1u'      w=r_w dtemp=dtemp
+c1  1 3  fox_sub    l='r_l/2' w=r_w dtemp=dtemp
+* body
+rb  11 21 ppolyf_s_body
++r='(r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n))' l=r_l w=r_w dtemp=dtemp
+* terminal 2
+rt2 21 2 ppolyf_s_t l='s*1u'      w=r_w dtemp=dtemp
+c2  2 3  fox_sub    l='r_l/2' w=r_w dtemp=dtemp
+*-------------------
+.ends ppolyf_s
+*******************************************************************************************************
+* model for 1k high-Rs P+ poly on field oxide resistor (LV area)
+*******************************************************************************************************
+.subckt ppolyf_u_1k 1 2 3  r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* model for body resistor
+.param
++ r_rsh0='rsh_ppolyf_u_1k*(1+ mc_rsh_ppolyf_u_1k/(rsh_ppolyf_u_1k)*res_mc_skew*sw_stat_global)'
++ r_dw='0.0148E-6*(1+ mc_dw_ppolyf_u_1k*res_mc_skew*sw_stat_global)'
++ r_dl=3.85E-11
++ r_vc1=0
++ r_vc2=0
++ r_tc1=-9.39e-4
++ r_tc2=2.51E-6
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+.model ppolyf_u_1k_body r
++ af=1
++ kf=2.62e-26
++ noise=1
+* model for terminal resistor
+.model ppolyf_u_1k_t r
++ rsh='85.45+mc_rt_ppolyf_u_1k*res_mc_skew*sw_stat_global'
++ tc1=-7.92E-3
++ tc2=4.25E-5
++ tnom=25
++ af=1
++ kf=2.62e-26
+* model for substrate capacitor (pF/um2)
+.model fox_sub c
++ cox=8.85E-05
+*-------------------
+* terminal 1
+rt1 1 11 ppolyf_u_1k_t l='s*1u'      w=r_w dtemp=dtemp
+c1  1 3  fox_sub       l='r_l/2' w=r_w dtemp=dtemp
+* body
+rb  11 21  ppolyf_u_1k_body
++r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)' l=r_l w=r_w dtemp=dtemp
+* terminal 2
+rt2 21 2 ppolyf_u_1k_t l='s*1u'      w=r_w dtemp=dtemp
+c2  2 3  fox_sub       l='r_l/2' w=r_w dtemp=dtemp
+*-------------------
+.ends ppolyf_u_1k
+*******************************************************************************************************
+*** model for 2k high-rs P+ poly on field oxide resistor (LV area)
+*******************************************************************************************************
+* model for 2k high-Rs P+ poly on field oxide resistor
+.subckt ppolyf_u_2k 1 2 3  r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* model for body resistor
+.param
++ r_rsh0='rsh_ppolyf_u_2k*(1+ mc_rsh_ppolyf_u_2k/(rsh_ppolyf_u_2k)*res_mc_skew*sw_stat_global)'
++ r_dw='0.02256E-6*(1+ mc_dw_ppolyf_u_2k*res_mc_skew*sw_stat_global)'
++ r_dl=-0.0932E-6
++ r_vc1=0
++ r_vc2=0
++ r_tc1=-0.001669823
++ r_tc2=3.74326E-06
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+.model ppolyf_u_2k_body r
++ af=1
++ kf=2.62e-26
++ noise=1
+* model for terminal resistor
+.model ppolyf_u_2k_t r
++ rsh='33.16+mc_rt_ppolyf_u_2k*res_mc_skew*sw_stat_global'
++ tc1=-0.003763316
++ tc2=9.81166E-06
++ tnom=25
++ af=1
++ kf=2.62e-26
+* model for substrate capacitor (pF/um2)
+.model fox_sub c
++ cox=8.85E-05
+*-------------------
+* terminal 1
+rt1 1 11 ppolyf_u_2k_t l='s*1u'      w=r_w dtemp=dtemp
+c1  1 3  fox_sub       l='r_l/2' w=r_w dtemp=dtemp
+* body
+rb  11 21  ppolyf_u_2k_body
++r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)' l=r_l w=r_w dtemp=dtemp
+* terminal 2
+rt2 21 2 ppolyf_u_2k_t l='s*1u'      w=r_w dtemp=dtemp
+c2  2 3  fox_sub       l='r_l/2' w=r_w dtemp=dtemp
+*-------------------
+.ends ppolyf_u_2k
+*******************************************************************************************************
+* model for 1k high-Rs P+ poly on field oxide resistor (MV area)
+*******************************************************************************************************
+.subckt ppolyf_u_1k_6p0 1 2 3  r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* model for body resistor
+.param
++ r_rsh0='rsh_ppolyf_u_1k_6p0*(1 + mc_rsh_ppolyf_u_1k_6p0/(rsh_ppolyf_u_1k_6p0)*res_mc_skew*sw_stat_global)'
++ r_dw='0.0148E-6*(1+ mc_dw_ppolyf_u_1k_6p0*res_mc_skew*sw_stat_global)'
++ r_dl=3.85E-11
++ r_vc1=0
++ r_vc2=0
++ r_tc1=-9.39e-4
++ r_tc2=2.51E-6
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+.model ppolyf_u_1k_body r
++ af=1
++ kf=2.62e-26
++ noise=1
+* model for terminal resistor
+.model ppolyf_u_1k_t r
++ rsh='85.45+mc_rt_ppolyf_u_1k_6p0*res_mc_skew*sw_stat_global'
++ tc1=-7.92E-3
++ tc2=4.25E-5
++ tnom=25
++ af=1
++ kf=2.62e-26
+* model for substrate capacitor (pF/um2)
+.model fox_sub c
++ cox=8.85E-05
+*-------------------
+* terminal 1
+rt1 1 11 ppolyf_u_1k_t l='s*1u'      w=r_w dtemp=dtemp
+c1  1 3  fox_sub       l='r_l/2' w=r_w dtemp=dtemp
+* body
+rb  11 21  ppolyf_u_1k_body
++r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)' l=r_l w=r_w dtemp=dtemp
+* terminal 2
+rt2 21 2 ppolyf_u_1k_t l='s*1u'      w=r_w dtemp=dtemp
+c2  2 3  fox_sub       l='r_l/2' w=r_w dtemp=dtemp
+*-------------------
+.ends ppolyf_u_1k_6p0
+*******************************************************************************************************
+*** model for 2k high-rs P+ poly on field oxide resistor (MV area)
+*******************************************************************************************************
+* model for 2k high-Rs P+ poly on field oxide resistor
+.subckt ppolyf_u_2k_6p0 1 2 3  r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* model for body resistor
+.param
++ r_rsh0='rsh_ppolyf_u_2k_6p0+mc_rsh_ppolyf_u_2k_6p0*res_mc_skew*sw_stat_global'
++ r_dw='0.02256E-6*(1+ mc_dw_ppolyf_u_2k_6p0*res_mc_skew*sw_stat_global)'
++ r_dl=-0.0932E-6
++ r_vc1=0
++ r_vc2=0
++ r_tc1=-0.001669823
++ r_tc2=3.74326E-06
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+
+.model ppolyf_u_2k_body r
++ af=1
++ kf=2.62e-26
++ noise=1
+* model for terminal resistor
+.model ppolyf_u_2k_t r
++ rsh='33.16+mc_rt_ppolyf_u_2k_6p0*res_mc_skew*sw_stat_global'
++ tc1=-0.003763316
++ tc2=9.81166E-06
++ tnom=25
++ af=1
++ kf=2.62e-26
+* model for substrate capacitor (pF/um2)
+.model fox_sub c
++ cox=8.85E-05
+*-------------------
+* terminal 1
+rt1 1 11 ppolyf_u_2k_t l='s*1u'  w=r_w dtemp=dtemp
+c1  1 3  fox_sub       l='r_l/2' w=r_w dtemp=dtemp
+* body
+
+rb  11 21  ppolyf_u_2k_body
++r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)' l='r_l' w='r_w' dtemp=dtemp
+
+* terminal 2
+rt2 21 2 ppolyf_u_2k_t l='s*1u'  w=r_w dtemp=dtemp
+c2  2 3  fox_sub       l='r_l/2' w=r_w dtemp=dtemp
+*-------------------
+.ends ppolyf_u_2k_6p0
+*******************************************************************************************************
+*** model for 3k high-rs P+ poly on field oxide resistor (LV & MVarea)
+*******************************************************************************************************
+* model for 3k high-Rs P+ poly on field oxide resistor
+.subckt ppolyf_u_3k 1 2 3  r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* model for body resistor
+.param
++ r_rsh0='rsh_ppolyf_u_3k*(1 + mc_rsh_ppolyf_u_3k/(rsh_ppolyf_u_3k)*res_mc_skew*sw_stat_global)'
++ r_dw='0.02256E-6*(1+ mc_dw_ppolyf_u_3k*res_mc_skew*sw_stat_global)'
++ r_dl=-0.0932E-6
++ r_vc1=0
++ r_vc2=0
++ r_tc1=-0.001669823
++ r_tc2=3.74326E-06
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+.model ppolyf_u_3k_body r
++ af=1
++ kf=2.62e-26
++ noise=1
+* model for terminal resistor
+.model ppolyf_u_3k_t r
++ rsh='33.16+mc_rt_ppolyf_u_3k*res_mc_skew*sw_stat_global'
++ tc1=-0.003763316
++ tc2=9.81166E-06
++ tnom=25
++ af=1
++ kf=2.62e-26
+* model for substrate capacitor (pF/um2)
+.model fox_sub c
++ cox=8.85E-05
+*-------------------
+* terminal 1
+rt1 1 11 ppolyf_u_3k_t l='s*1u'      w=r_w dtemp=dtemp
+c1  1 3  fox_sub       l='r_l/2' w=r_w dtemp=dtemp
+* body
+rb  11 21  ppolyf_u_3k_body
++r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(11,21))/r_n+r_vc2*abs(v(11,21))*abs(v(11,21))/r_n/r_n)' dtemp=dtemp l='r_l' w='r_w'
+* terminal 2
+rt2 21 2 ppolyf_u_3k_t l='s*1u'      w=r_w dtemp=dtemp
+c2  2 3  fox_sub       l='r_l/2' w=r_w dtemp=dtemp
+*-------------------
+.ends ppolyf_u_3k
+*******************************************************************************************************
+* model for metal 1 resistor
+.subckt rm1 1 2 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0=rsh_rm1
++ r_dw=0
++ r_dl=0
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.33E-3
++ r_tc2=0
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+*-------------------
+* body
+rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
+*-------------------
+.ends rm1
+*******************************************************************************************************
+* model for metal 2 resistor
+.subckt rm2 1 2 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0=rsh_rm2
++ r_dw=0
++ r_dl=0
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.33E-3
++ r_tc2=0
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+*-------------------
+* body
+rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
+*-------------------
+.ends rm2
+*******************************************************************************************************
+* model for metal 3 resistor
+.subckt rm3 1 2 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0=rsh_rm3
++ r_dw=0
++ r_dl=0
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.33E-3
++ r_tc2=0
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+*-------------------
+* body
+rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
+*-------------------
+.ends rm3
+*******************************************************************************************************
+* model for metal 4 resistor
+.subckt rm4 1 2 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0=rsh_rm4
++ r_dw=0
++ r_dl=0
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.33E-3
++ r_tc2=0
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+*-------------------
+* body
+rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
+*-------------------
+.ends rm4
+***************************************************************************************
+* model for top metal 6k resistor
+.subckt tm6k 1 2 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0=rsh_tm6k
++ r_dw=0
++ r_dl=0
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.5e-3
++ r_tc2=0
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+*-------------------
+* body
+rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
+*-------------------
+.ends tm6k
+***************************************************************************************
+* model for top metal 9k resistor
+.subckt tm9k 1 2 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0=rsh_tm9k
++ r_dw=0
++ r_dl=0
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.7e-3
++ r_tc2=0
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+*-------------------
+* body
+rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
+*-------------------
+.ends tm9k
+***************************************************************************************
+* model for top metal 11k resistor 
+.subckt tm11k 1 2 r_length=l r_width=w dtemp=0 par=1 s=1
+*-------------------
+* body resistor parameters
++ r_rsh0=rsh_tm11k
++ r_dw=0
++ r_dl=0
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.7e-3
++ r_tc2=0
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+*-------------------
+* body
+rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
+*-------------------
+.ends tm11k
+***************************************************************************************
+* model for top metal 30k resistor
+.subckt tm30k 1 2 r_length=l r_width=w par=1 s=1 dtemp=0
+*-------------------
+* body resistor parameters
++ r_rsh0='rsh_tm30k'
++ r_dw=0
++ r_dl=0
++ r_vc1=0
++ r_vc2=0
++ r_tc1=3.86e-3
++ r_tc2=1.51e-6
++ r_tnom=25
++ r_l='s*(r_length-2*r_dl)'
++ r_w='r_width-2*r_dw'
++ r_n='r_l/r_w'
++ r_temp='1+r_tc1*(temper+dtemp-r_tnom)+r_tc2*(temper+dtemp-r_tnom)*(temper+dtemp-r_tnom)'
+*-------------------
+* body
+rb 1 2 r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(1,2))/r_n+r_vc2*abs(v(1,2))*abs(v(1,2))/r_n/r_n)'
+*rb 1 2 r='r_temp*r_n*r_rsh0' vc1 = 'r_vc1/r_n/r_rsh0' vc2 = 'r_vc2/r_n/r_n/r_rsh0'
+*-------------------
+.ends tm30k
+***************************************************************************************
+*
+.ENDL res
+* 
+* ----------------------------------------------------------------------------------------------------
+* MIM Capacitor Scalable DC Model
+*
+*The models are obtained from YI-141-SM003 Rev. 1E.
+*
+* ----------------------------------------------------------------------------------------------------
+.LIB cap_mim
+*/ -------------------------------------------------------------------------------------
+*/ MIM Capacitor (1.5fF/um2) subcircuit model for GF's 0.18 Analog CMOS process
+*/--------------------------------------------------------------------------------------
+.subckt cap_mim_1f5fF 1 2  c_length=l c_width=w dtemp=0 par=1
+.param
++ c_cox='1.47e-3*mim_corner_1p5fF'
++ c_capsw='3.79e-10*mim_corner_1p5fF'
++ c_tnom=25
++ c_tc1=4.0604E-05
++ c_tc2=-6.90E-08
++ c_vcr1=-4.5152E-05
++ c_vcr2=9.748E-06
++ c_area='c_length*c_width'
++ c_peri='2*(c_length+c_width)'
+* + c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temper+dtemp-c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
++ c_c0='(c_cox*c_area+c_capsw*c_peri) * (1+mc_c_cox_1p5fF)'
+
+*/ model for capacitance
+.MODEL cap_mim_1f5_model C 
++ cap=c_c0 
++ tc1=c_tc1 
++ tc2=c_tc2
++ tnom=c_tnom
+
+* c_cap 1 2 c='c_c0*(1+ c_vcr1*v(1, 2)+c_vcr2*v(1,2)*v(1,2) )*(1+mc_c_cox_1p5fF)'
+c_cap 1 2 cap_mim_1f5_model dtemp=dtemp
+
+.ends cap_mim_1f5
+*/ -------------------------------------------------------------------------------------
+*/ MIM Capacitor (1fF/um2) subcircuit model for GF's 0.18 Analog CMOS process
+*/--------------------------------------------------------------------------------------
+.subckt cap_mim_1f0fF 1 2  c_length=l c_width=w dtemp=0 par=1
+.param
++ c_cox='0.987e-3*mim_corner_1p0fF'
++ c_capsw='3.3e-10*mim_corner_1p0fF'
++ c_tnom=25
++ c_tc1=1.302e-5
++ c_tc2=-4.93e-9
++ c_vcr1=6.079e-6
++ c_vcr2=1.268e-6
++ c_area='c_length*c_width'
++ c_peri='2*(c_length+c_width)'
+* + c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temper+dtemp-c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
++ c_c0='(c_cox*c_area+c_capsw*c_peri) * (1+mc_c_cox_1p0fF)'
+
+*/ model for capacitance
+.MODEL cap_mim_1f0_model C 
++ cap=c_c0 
++ tc1=c_tc1 
++ tc2=c_tc2
++ tnom=c_tnom
+
+* c_cap 1 2 c='c_c0*(1+ c_vcr1*v(1, 2)+c_vcr2*v(1,2)*v(1,2) )*(1+mc_c_cox_1p0fF)'
+c_cap 1 2 cap_mim_1f0_model dtemp=dtemp
+
+.ends cap_mim_1f0
+*/ -------------------------------------------------------------------------------------
+*/ MIM Capacitor (2fF/um2) subcircuit model for GLOBALFOUNDRIES 0.18 Analog CMOS process M2-M3
+*/--------------------------------------------------------------------------------------
+.subckt cap_mim_2f0fF  1 2  c_length=l  c_width=w dtemp=0 par=1
+.param gleak='9.51e-10/5*10000'
+.param c_cox='1.99e-3*mim_corner_2p0fF'
+.param c_capsw='2.383e-10*mim_corner_2p0fF'
+.param c_vcr1='0+(c_width>5u||c_length>5u)*8.742e-6+(c_width<=5u||c_length<=5u)*(-81e-6)'
+.param c_vcr2='0+(c_width>5u||c_length>5u)*9.188e-6+(c_width<=5u||c_length<=5u)*(16.7e-6)'
+
+.param c_tnom=25
+.param c_tc1=1.46e-5
+.param c_tc2=-5.55e-8
+.param c_AREA='c_length*c_width'
+.param c_PERI='2*(c_length+c_width)'
+
+* .param c_c0='(c_cox*c_AREA+c_capsw*c_PERI)*(1+c_tc1*(temper +dtemp -c_tnom)+c_tc2*(temper+dtemp-c_tnom)*(temper+dtemp-c_tnom))'
+.param c_c0='(c_cox*c_area+c_capsw*c_peri) * (1+mc_c_cox_2p0fF)'
+
+*/ model for capacitance
+.MODEL cap_mim_2f0_model C 
++ cap=c_c0 
++ tc1=c_tc1 
++ tc2=c_tc2
++ tnom=c_tnom
+
+* c_cap 1 2 c='c_c0*(1+c_vcr1*v(1,2)+c_vcr2*v(1,2)*v(1,2))*(1+mc_c_cox_2p0fF)'
+c_cap 1 2 cap_mim_2f0_model dtemp=dtemp
+r_leak 1 2 r='1/(gleak*c_AREA)' tc1=c_tc1 tc2=c_tc2 dtemp=dtemp
+
+.ends cap_mim_2f0
+.ENDL cap_mim
+* ----------------------------------------------------------------------------------------------------
+*
+*
+.LIB moscap
+
+.subckt cap_nmos_03v3 1 2 c_length=l c_width=w dtemp=0
+.param cvar1=0.002003
+.param cvar2=0.00198
+.param cvar3=6.25
+.param cvar4=-3.9375
+c_moscap 1 2 c='cap_nmos_03v3_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))' dtemp=dtemp
+.ends cap_nmos_03v3
+*
+.subckt cap_pmos_03v3 1 2 c_length=l c_width=w dtemp=0
+.param cvar1=0.001998
+.param cvar2=0.00196
+.param cvar3=-6.25
+.param cvar4=-4.9375
+c_moscap 1 2 c='cap_pmos_03v3_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))' dtemp=dtemp
+.ends cap_pmos_03v3
+*
+.subckt cap_nmos_06v0 1 2 c_length=l c_width=w dtemp=0
+.param cvar1=0.001107
+.param cvar2=0.00107
+.param cvar3=6.25
+.param cvar4=-4.1875
+c_moscap 1 2 c='cap_nmos_06v0_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))' dtemp=dtemp
+.ends cap_nmos_06v0
+*
+.subckt cap_pmos_06v0 1 2 c_length=l c_width=w dtemp=0
+.param cvar1=0.001107
+.param cvar2=0.00107
+.param cvar3=-6.25
+.param cvar4=-5.75
+c_moscap 1 2 c='cap_pmos_06v0_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))' dtemp=dtemp
+.ends cap_pmos_06v0
+*
+.subckt cap_nmos_03v3_b 1 2 c_length=l c_width=w dtemp=0
+.param cvar1=0.002458
+.param cvar2=0.001533
+.param cvar3=1.515152
+.param cvar4=0.560606
+c_moscap 1 2 c='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))' dtemp=dtemp
+.ends cap_nmos_03v3_b
+*
+.subckt cap_pmos_03v3_b 1 2 c_length=l c_width=w dtemp=0
+.param cvar1=0.002435
+.param cvar2=0.00154
+.param cvar3=-1.66667
+.param cvar4=0.65
+c_moscap 1 2 c='cap_pmos_03v3_b_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))' dtemp=dtemp
+.ends cap_pmos_03v3_b
+*
+.subckt cap_nmos_06v0_b 1 2 c_length=l c_width=w dtemp=0
+.param cvar1=0.001293
+.param cvar2=0.000863
+.param cvar3=1.052632
+.param cvar4=0.736842
+c_moscap 1 2 c='cap_nmos_06v0_b_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))' dtemp=dtemp
+.ends cap_nmos_06v0_b
+*
+.subckt cap_pmos_06v0_b 1 2 c_length=l c_width=w dtemp=0
+.param cvar1=0.001325
+.param cvar2=0.000865
+.param cvar3=-1.42857
+.param cvar4=0.642857
+c_moscap 1 2 c='cap_pmos_06v0_b_corner*c_length*c_width*(cvar1+cvar2*tanh(cvar3*v(1,2)+cvar4))' dtemp=dtemp
+.ends cap_pmos_06v0_b
+*
+.ENDL moscap
+*
+***************************************************************************************************
+* 3.3V NMOS statistical Models
+***************************************************************************************************
+*

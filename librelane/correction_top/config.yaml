@@ -1,0 +1,78 @@
+# 1. Design Definition
+# =====================================================================
+# OpenLane config: correction_top (gain + offset calibration block)
+#
+# Mirrors the sar_adc_logic flow (same PDK, same clock rate, same
+# timing corners) but as a normal synthesizable core rather than a
+# fixed-pin macro:
+#   - correction_top has no analog pins to align against a predetermined
+#     floorplan location, so it doesn't need FP_SIZING: absolute /
+#     PNR_CORE_RING: false the way sar_adc_logic did.
+#   - It's a single-clock, fully synchronous design (every register in
+#     gain_correction / offset_correction / correction_top is clocked
+#     directly by `clk`, and rst_n is a SYNCHRONOUS reset sampled inside
+#     always_ff blocks) -- no generated clocks, no CDC.
+#
+# Use the corrected RTL (gain_correction.sv / offset_correction.sv /
+# correction_top.sv as delivered after the f_abs, closed-loop feedback,
+# and offset_delta width fixes) -- not any earlier draft.
+# =====================================================================
+
+# 1. Design Definition
+DESIGN_NAME: correction_top
+VERILOG_FILES:
+  - dir::../../src/correction_top/gain_correction.sv
+  - dir::../../src/correction_top/offset_correction.sv
+  - dir::../../src/correction_top/correction_top.sv
+
+# 2. Clock Constraints
+CLOCK_PORT: clk
+CLOCK_PERIOD: 20.0 # 50 MHz, same system clock as sar_adc_logic
+
+SYNTH_STRATEGY: "AREA 3"   # or "AREA 2", "AREA 3", "DELAY 0"..."DELAY 4"
+
+# 3. Power and Ground Nets
+VDD_NETS:
+  - VDD
+GND_NETS:
+  - VSS
+
+# 4. Floorplanning (normal synthesizable core, not a fixed-pin macro)
+FP_SIZING: relative
+FP_CORE_UTIL: 40          # generous starting point; tighten after first PnR run
+FP_ASPECT_RATIO: 1.0
+
+# 5. Power Distribution Network (PDN) -- standard core PDN, unlike the
+# macro-style PDN_MULTILAYER: false / PDN_CORE_RING: false used for
+# sar_adc_logic.
+PDN_MULTILAYER: true
+PDN_CORE_RING: true
+PDN_ENABLE_PINS: true
+
+
+
+PNR_SDC_FILE: dir::correction_top.sdc
+SIGNOFF_SDC_FILE: dir::correction_top.sdc
+
+# 6. Custom 3.3V Timing Corners -- same PDK / same standard-cell library
+# as sar_adc_logic, so reused verbatim.
+LIB:
+  "*_tt_025C_3v30":
+    - "/Users/shreyas/Projects/chipathon-2026-ti-adc/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib"
+  "*_ss_125C_3v00":
+    - "/Users/shreyas/Projects/chipathon-2026-ti-adc/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_3v00.lib"
+  "*_ff_n40C_3v60":
+    - "/Users/shreyas/Projects/chipathon-2026-ti-adc/gf180mcu/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib"
+
+STA_CORNERS:
+  - nom_tt_025C_3v30
+  - min_tt_025C_3v30
+  - max_tt_025C_3v30
+  - nom_ss_125C_3v00
+  - min_ss_125C_3v00
+  - max_ss_125C_3v00
+  - nom_ff_n40C_3v60
+  - min_ff_n40C_3v60
+  - max_ff_n40C_3v60
+
+DEFAULT_CORNER: nom_tt_025C_3v30

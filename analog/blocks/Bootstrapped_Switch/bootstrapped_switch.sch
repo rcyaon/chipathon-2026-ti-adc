@@ -32,29 +32,25 @@ N -240 -160 -240 -60 {lab=clk}
 N -240 -60 -180 -60 {lab=clk}
 N -200 110 -200 140 {lab=0}
 N -630 80 -240 80 {lab=clkb}
-N -630 -160 -240 -160 {lab=clk}
 N -260 20 -260 30 {lab=C3bottom}
 N -260 30 -200 30 {lab=C3bottom}
 N -260 -270 -260 -40 {lab=C3top}
-N -470 -80 -460 -80 {lab=#net3}
-N -460 -110 -460 -80 {lab=#net3}
-N -470 -110 -460 -110 {lab=#net3}
+N -470 -80 -460 -80 {lab=vdd}
+N -460 -110 -460 -80 {lab=vdd}
+N -470 -110 -460 -110 {lab=vdd}
 N -470 0 -460 0 {lab=0}
 N -460 0 -460 30 {lab=0}
 N -470 30 -460 30 {lab=0}
 N -470 30 -470 50 {lab=0}
-N -400 -80 -400 -60 {lab=0}
-N -400 -150 -400 -140 {lab=#net3}
-N -470 -150 -400 -150 {lab=#net3}
-N -470 -150 -470 -110 {lab=#net3}
-N -470 -50 -470 -30 {lab=#net4}
+N -470 -150 -470 -110 {lab=vdd}
+N -470 -50 -470 -30 {lab=#net3}
 N -520 -0 -510 -0 {lab=clkb}
 N -520 -80 -520 -0 {lab=clkb}
 N -520 -80 -510 -80 {lab=clkb}
-N -470 -40 -430 -40 {lab=#net4}
-N -430 -40 -430 10 {lab=#net4}
-N -430 10 -330 10 {lab=#net4}
-N -330 0 -330 10 {lab=#net4}
+N -470 -40 -430 -40 {lab=#net3}
+N -430 -40 -430 10 {lab=#net3}
+N -430 10 -330 10 {lab=#net3}
+N -330 0 -330 10 {lab=#net3}
 N -540 -40 -520 -40 {lab=clkb}
 N -540 -40 -540 80 {lab=clkb}
 N -600 20 -600 80 {lab=clkb}
@@ -70,26 +66,17 @@ N -460 -250 -380 -250 {lab=C2top}
 N -440 -300 -420 -300 {lab=C1top}
 N -440 -300 -440 -230 {lab=C1top}
 N -520 -230 -440 -230 {lab=C1top}
-N -520 -360 -520 -330 {lab=#net5}
-N -520 -360 -380 -360 {lab=#net5}
-N -380 -360 -380 -330 {lab=#net5}
-N -380 -360 -260 -360 {lab=#net5}
-N -260 -360 -260 -330 {lab=#net5}
-N -140 -360 -140 -190 {lab=#net5}
-N -260 -360 -140 -360 {lab=#net5}
-N -140 -360 100 -360 {lab=#net5}
-N 100 -360 100 -340 {lab=#net5}
+N -520 -360 -520 -330 {lab=vdd}
+N -520 -360 -380 -360 {lab=vdd}
+N -380 -360 -380 -330 {lab=vdd}
+N -380 -360 -260 -360 {lab=vdd}
+N -260 -360 -260 -330 {lab=vdd}
+N -140 -360 -140 -190 {lab=vdd}
+N -260 -360 -140 -360 {lab=vdd}
+N -140 -360 100 -360 {lab=vdd}
+N 100 -360 100 -340 {lab=vdd}
 N -260 -240 -70 -240 {lab=C3top}
-N -160 -410 -160 -390 {lab=0}
-N -160 -480 -160 -470 {lab=#net5}
-N -220 -480 -160 -480 {lab=#net5}
-N -220 -480 -220 -360 {lab=#net5}
-N -710 -160 -710 -150 {lab=clk}
-N -710 -160 -630 -160 {lab=clk}
-N -710 -90 -710 -70 {lab=0}
-N -690 80 -690 90 {lab=clkb}
 N -690 80 -630 80 {lab=clkb}
-N -690 150 -690 170 {lab=0}
 N 210 -500 210 -340 {lab=clkb}
 N -640 -500 210 -500 {lab=clkb}
 N -760 -500 -640 -500 {lab=clkb}
@@ -97,10 +84,9 @@ N -760 -500 -760 80 {lab=clkb}
 N -760 80 -690 80 {lab=clkb}
 N 220 30 280 30 {lab=vout}
 N 140 30 140 70 {lab=vin}
-N 140 130 140 150 {lab=0}
-N -140 -160 -130 -160 {lab=#net5}
-N -130 -190 -130 -160 {lab=#net5}
-N -140 -190 -130 -190 {lab=#net5}
+N -140 -160 -130 -160 {lab=vdd}
+N -130 -190 -130 -160 {lab=vdd}
+N -140 -190 -130 -190 {lab=vdd}
 N -200 80 -190 80 {lab=0}
 N -190 80 -190 110 {lab=0}
 N -200 110 -190 110 {lab=0}
@@ -118,6 +104,12 @@ N -440 -260 -300 -260 {lab=C1top}
 N 210 -300 210 -280 {lab=0}
 N 80 30 80 40 {lab=0}
 N 190 30 190 40 {lab=0}
+N -690 80 -690 100 {lab=clkb}
+N -350 -160 -240 -160 {lab=clk}
+N -630 -150 -470 -150 {lab=vdd}
+N -630 -360 -630 -150 {lab=vdd}
+N -630 -360 -520 -360 {lab=vdd}
+N -200 -430 -200 -360 {lab=vdd}
 C {symbols/nfet_03v3.sym} 190 10 1 0 {name=M1
 L=0.28u
 W=30u
@@ -332,33 +324,9 @@ model=nfet_03v3
 spiceprefix=X
 }
 C {gnd.sym} -470 50 0 0 {name=l3 lab=0}
-C {vsource.sym} -400 -110 0 0 {name=Vdd value=3.3 savecurrent=false}
-C {gnd.sym} -400 -60 0 0 {name=l4 lab=0}
-C {vsource.sym} -160 -440 0 0 {name=Vdd1 value=3.3 savecurrent=false}
-C {gnd.sym} -160 -390 0 0 {name=l5 lab=0}
-C {vsource.sym} -710 -120 0 0 {name=Vclk value="PULSE(0 3.3 0 100p 100p 20n 40n)" savecurrent=false}
-C {gnd.sym} -710 -70 0 0 {name=l6 lab=0}
-C {vsource.sym} -690 120 0 0 {name=Vclkb value="PULSE(3.3 0 0 100p 100p 20n 40n)" savecurrent=false}
-C {gnd.sym} -690 170 0 0 {name=l7 lab=0}
-C {vsource.sym} 140 100 0 0 {name=Vin value="SIN(1.65 1.0 10MEG)" savecurrent=false}
-C {gnd.sym} 140 150 0 0 {name=l8 lab=0}
 C {lab_pin.sym} 140 50 0 0 {name=p5 sig_type=std_logic lab=vin}
 C {lab_pin.sym} 280 30 0 0 {name=p3 sig_type=std_logic lab=vout}
-C {lab_pin.sym} -660 -160 0 0 {name=p4 sig_type=std_logic lab=clk}
-C {code_shown.sym} 480 -420 0 0 {name=MODELS only_toplevel=false value="
-.include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice 
-.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical 
-.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/smbb000149.ngspice typical"}
-C {code_shown.sym} 410 -300 0 0 {name=SPICE only_toplevel=false value=".option method=gear 
-.option reltol=1e-4 
-
-.control
-
-tran 20p 500n
-
-plot v(clk) v(vin) v(vout)
-
-.endc"}
+C {lab_pin.sym} -290 -160 0 0 {name=p4 sig_type=std_logic lab=clk}
 C {capa.sym} 280 90 0 0 {name=C4
 m=1
 value=0.5p
@@ -379,3 +347,8 @@ C {lab_pin.sym} -330 -90 0 0 {name=p9 sig_type=std_logic lab=C2top}
 C {gnd.sym} 210 -280 0 0 {name=l14 lab=0}
 C {gnd.sym} 80 40 0 0 {name=l15 lab=0}
 C {gnd.sym} 190 40 0 0 {name=l17 lab=0}
+C {ipin.sym} -350 -160 0 0 {name=p13 lab=clk}
+C {ipin.sym} -690 100 0 0 {name=p14 lab=clkb}
+C {ipin.sym} 140 70 0 0 {name=p15 lab=vin}
+C {iopin.sym} -200 -430 3 0 {name=p16 lab=vdd}
+C {opin.sym} 280 40 0 0 {name=p17 lab=vout}

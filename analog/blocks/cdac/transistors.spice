@@ -8,6 +8,41 @@
 *.ipin Dx_b
 *.ipin phi_s
 *.ipin VDD
+*
+* ============================================================
+* SAMPLE-AND-HOLD / REDISTRIBUTION SWITCH CELL
+* ============================================================
+* This cell is instantiated once per CDAC unit (see caps.spice) and sits
+* directly on the bottom plate of that unit's cap. There is no separate
+* S/H capacitor anywhere in this design -- the CDAC array capacitors
+* (caps.spice: C1-C11) ARE the sampling capacitors. Each bottom plate is
+* time-multiplexed between two roles by this same switch cell:
+*
+*   PHASE 1 - SAMPLE (phi_s = 1):
+*     XM1 (Vin/phi_s/sw_node/GND) turns on, connecting Vin directly to
+*     the cap's bottom plate (sw_node). The cap charges/tracks Vin.
+*     XM3/XM4/XM6/XM7 (the Dx/Dx_b mux) are DON'T-CARE during this phase
+*     from a sampling standpoint -- sw_node is driven by the low-impedance
+*     XM1 path regardless of what Dx/Dx_b are doing, but Dx/Dx_b should
+*     still be held at a defined logic level to avoid unnecessary switch
+*     activity/leakage contention at sw_node.
+*
+*   PHASE 2 - HOLD / REDISTRIBUTE (phi_s = 0):
+*     XM1 turns off, isolating sw_node from Vin. Charge sampled onto the
+*     cap in Phase 1 is now held. XM3/XM4 (steered by Dx) and XM6/XM7
+*     (steered by Dx_b, the complementary bit) drive sw_node to VREF or
+*     GND per the digital code. Because the top plate (Vx/Vx_lsb, see
+*     caps.spice) is not reset between codes, this produces classic
+*     charge-redistribution DAC behavior: Vx moves by the array-weighted
+*     sum of (VREF or GND) - Vin, referenced to the sampled value.
+*
+* Non-overlap: phi_s must fall (end of Phase 1) strictly before Dx/Dx_b
+* are allowed to change for the new code, or charge injection from XM1's
+* turn-off will alias with the redistribution step. This isn't enforced
+* in this subcircuit -- it must be guaranteed by the digital clock/logic
+* driving phi_s and Dx/Dx_b (see decoder.v / window_detector.v timing).
+* ============================================================
+*
 XM3 sw_node Dx VREF GND nfet_03v3 L=0.28u W=0.22u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
 XM4 sw_node Dx_b VREF VDD pfet_03v3 L=0.28u W=0.22u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'

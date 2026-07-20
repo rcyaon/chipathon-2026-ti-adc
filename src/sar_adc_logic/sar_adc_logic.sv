@@ -1,17 +1,16 @@
 `timescale 1ns / 1ps
 
 module sar_adc_logic #(
-    parameter int RESOLUTION = 8
+    parameter int RESOLUTION       = 8
 )(
-    input  logic rst_n, 
-    input  logic clk_i, 
-    input  logic out_p, 
+    input  logic rst_n,
+    input  logic clk_i,
+    input  logic out_p,
     input  logic out_n,
-    
-    output logic [RESOLUTION-1:0] dac_ctrl, 
-    output logic [RESOLUTION-1:0] dout, 
-    output logic clk_o, 
-    output logic clk_o_n
+
+    output logic [RESOLUTION-1:0] dac_ctrl,
+    output logic [RESOLUTION-1:0] dout,
+    output logic clk_o
 );
 
     logic rst_n_tree;
@@ -27,7 +26,7 @@ module sar_adc_logic #(
         .Z(valid_clk)
     );
 
-    logic [RESOLUTION:0] seq; 
+    logic [RESOLUTION:0] seq;
     logic [RESOLUTION-1:0] sar_reg;
     logic [RESOLUTION-1:0] sar_reg_next;
     logic eoc;
@@ -38,7 +37,6 @@ module sar_adc_logic #(
     logic seq_at_msb;
     assign seq_at_msb = seq[RESOLUTION];
 
-    // Reset logic using the buffered reset
     always_ff @(posedge clk_i or negedge rst_n_tree) begin
         if (!rst_n_tree) start_req <= 1'b0;
         else if (seq_at_msb) start_req <= 1'b0;
@@ -60,8 +58,9 @@ module sar_adc_logic #(
 
     always_ff @(posedge valid_clk or posedge seq_rst) begin
         if (seq_rst) begin
-            seq     <= 1 << RESOLUTION;
-            sar_reg <= 1 << (RESOLUTION - 1);
+
+            seq     <= {1'b1, {RESOLUTION{1'b0}}};
+            sar_reg <= {1'b1, {(RESOLUTION-1){1'b0}}};
         end else begin
             seq     <= seq >> 1;
             sar_reg <= sar_reg_next;
@@ -72,17 +71,32 @@ module sar_adc_logic #(
         if (!rst_n_tree) dout <= '0;
         else dout <= sar_reg;
     end
-    
-    logic comp_trigger, comp_trigger_raw;
+
+    logic comp_trigger_raw;
     gf180mcu_fd_sc_mcu7t5v0__nor3_4 comp_trigger_nor (
         .A1(valid_clk), .A2(eoc), .A3(start_req), .ZN(comp_trigger_raw)
     );
-    gf180mcu_fd_sc_mcu7t5v0__buf_16 comp_trigger_driver (
-        .I(comp_trigger_raw), .Z(comp_trigger)
-    );
-    
+
+    logic comp_trigger;
+
+    generate
+        logic [40:0] dly_chain;
+        assign dly_chain[0] = comp_trigger_raw;
+
+        for (genvar g = 0; g < 40; g++) begin : dly_stage
+            gf180mcu_fd_sc_mcu7t5v0__buf_1 delay_buf (
+                .I(dly_chain[g]),
+                .Z(dly_chain[g+1])
+            );
+        end
+
+        gf180mcu_fd_sc_mcu7t5v0__buf_16 comp_trigger_driver (
+            .I(dly_chain[40]),
+            .Z(comp_trigger)
+        );
+    endgenerate
+
     assign clk_o    = comp_trigger;
-    assign clk_o_n  = ~comp_trigger;
     assign dac_ctrl = sar_reg;
 
 endmodule

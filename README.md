@@ -1,1 +1,1 @@
-This project is a 2-channel time-interleaved ADC I'm building with my team. We run two slower 8-bit ADCs side by side and stagger their timing to hit 50 MS/s combined. The analog side is mostly done: the track-and-hold circuit, comparator, and CDAC are all designed and simulated, and the CDAC results look clean and linear with just a small, fixable gain error. My teammates have also written digital correction logic for gain and offset mismatch, and early tests show it works.
+adding documentation l8r

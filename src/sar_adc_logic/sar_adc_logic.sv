@@ -37,7 +37,7 @@ module sar_adc_logic #(
     logic seq_at_msb;
     assign seq_at_msb = seq[RESOLUTION];
 
-    always_ff @(posedge clk_i or negedge rst_n_tree) begin
+    always_ff @(negedge clk_i or negedge rst_n_tree) begin
         if (!rst_n_tree) start_req <= 1'b0;
         else if (seq_at_msb) start_req <= 1'b0;
         else start_req <= 1'b1;
@@ -79,11 +79,11 @@ module sar_adc_logic #(
 
     logic comp_trigger;
 
-    generate
-        logic [40:0] dly_chain;
-        assign dly_chain[0] = comp_trigger_raw;
+    (* keep = "true" *) logic [260:0] dly_chain;
+    assign dly_chain[0] = comp_trigger_raw;
 
-        for (genvar g = 0; g < 40; g++) begin : dly_stage
+    generate
+        for (genvar g = 0; g < 260; g++) begin : dly_stage
             gf180mcu_fd_sc_mcu7t5v0__buf_1 delay_buf (
                 .I(dly_chain[g]),
                 .Z(dly_chain[g+1])
@@ -91,7 +91,7 @@ module sar_adc_logic #(
         end
 
         gf180mcu_fd_sc_mcu7t5v0__buf_16 comp_trigger_driver (
-            .I(dly_chain[40]),
+            .I(dly_chain[260]),
             .Z(comp_trigger)
         );
     endgenerate

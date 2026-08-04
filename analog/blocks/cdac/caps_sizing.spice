@@ -1,5 +1,5 @@
 ** sch_path: /foss/designs/proj_branch/chipathon-2026-ti-adc/analog/blocks/cdac/caps.sch
-**.subckt caps Dx_b<0> Dx_b<1> Dx_b<2> Dx_b<3> Vin Dx_b<4> Dx_b<5> GND Dx_b<6> Dx_b<7> VREF Dx<0> phi_s Dx<1> Dx<2> VDD Dx<3> Vx
+.subckt caps Dx_b<0> Dx_b<1> Dx_b<2> Dx_b<3> Vin Dx_b<4> Dx_b<5> GND Dx_b<6> Dx_b<7> VREF Dx<0> phi_s Dx<1> Dx<2> VDD Dx<3> Vx
 *+ Dx<4> Dx<5> Vx_lsb Dx<6> Dx<7>
 *.ipin Vin
 *.ipin GND
@@ -42,7 +42,7 @@ x1 net1 VDD Dx<1> Dx_b<1> phi_s VREF Vin GND transistors
 x2 net4 VDD Dx<3> Dx_b<3> phi_s VREF Vin GND transistors
 x3 net7 VDD Dx<6> Dx_b<6> phi_s VREF Vin GND transistors
 XC9 Vx VREF cap_mim_2f0fF c_width=4e-6 c_length=4e-6 m=1
-**.ends
+.ends
 
 * expanding   symbol:  /foss/designs/proj_branch/chipathon-2026-ti-adc/analog/blocks/cdac/transistors.sym # of pins=8
 ** sym_path: /foss/designs/proj_branch/chipathon-2026-ti-adc/analog/blocks/cdac/transistors.sym

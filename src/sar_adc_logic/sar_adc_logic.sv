@@ -1,24 +1,65 @@
 `timescale 1ns / 1ps
 
 module sar_adc_logic #(
-    parameter int RESOLUTION       = 8
+    parameter int RESOLUTION      = 8,     // number of SAR bits
+    parameter int NUM_DELAY_CELLS = 70    // buffer stages in the comparator-strobe delay chain
 )(
     input  logic rst_n,
-    input  logic clk_i,
-    input  logic out_p,
-    input  logic out_n,
+    input  logic clk_i,              // 25MHz phi: high = convert, low = track
 
-    output logic [RESOLUTION-1:0] dac_ctrl,
-    output logic [RESOLUTION-1:0] dout,
-    output logic clk_o
+    input  logic out_p,              // comparator: guess too high
+    input  logic out_n,              // comparator: guess too low
+
+    output logic phi_top,            // top-plate switch enable (opens first)
+    output logic phi_top_n,
+    output logic phi_bottom,         // bottom-plate TG enable (opens second)
+    output logic phi_bottom_n,
+
+    output logic [RESOLUTION-1:0] d_ctrl,    // live trial code driving the CDAC
+    output logic [RESOLUTION-1:0] d_ctrl_n,  // complementary code (TG/PMOS legs)
+    output logic [RESOLUTION-1:0] d_out,     // latched result, valid after EOC
+
+    output logic clk_o               // strobes the external comparator
 );
 
-    logic rst_n_tree;
-    gf180mcu_fd_sc_mcu7t5v0__buf_8 rst_root (
-        .I(rst_n),
-        .Z(rst_n_tree)
+    // ------------------------------------------------------------
+    // Non-overlap generator.
+    // phi_top = ~clk_i, driven straight off phi with no added delay.
+    // phi_bottom = phi_top OR delayed(phi_top): the OR term means
+    // phi_bottom rises the instant phi_top rises (no skew needed
+    // when re-entering track), but can only fall once BOTH the
+    // direct and delayed copies of phi_top have fallen -- i.e. its
+    // fall lags phi_top's fall by the dead_time chain's delay.
+    // This is the asymmetric skew: fast to close, delayed to open.
+    // ------------------------------------------------------------
+    logic phi_top_int;
+    gf180mcu_fd_sc_mcu7t5v0__inv_4 phi_top_inv (
+        .I(clk_i),
+        .ZN(phi_top_int)
+    );
+    assign phi_top   = phi_top_int;
+    assign phi_top_n = ~phi_top_int;
+
+    logic [2:0] dead_time_dly;
+    assign dead_time_dly[0] = phi_top_int;
+    generate
+        for (genvar d = 0; d < 2; d++) begin : dead_time_stage
+            gf180mcu_fd_sc_mcu7t5v0__inv_1 dead_time_buf (
+                .I(dead_time_dly[d]),
+                .ZN(dead_time_dly[d+1])
+            );
+        end
+    endgenerate
+
+    gf180mcu_fd_sc_mcu7t5v0__or2_4 phi_bottom_or (
+        .A1(phi_top_int),
+        .A2(dead_time_dly[2]),
+        .Z(phi_bottom)
     );
 
+    // ------------------------------------------------------------
+    // Comparator decision detect
+    // ------------------------------------------------------------
     logic valid_clk;
     gf180mcu_fd_sc_mcu7t5v0__xor2_4 valid_clk_xor (
         .A1(out_p),
@@ -26,77 +67,96 @@ module sar_adc_logic #(
         .Z(valid_clk)
     );
 
-    logic [RESOLUTION:0] seq;
-    logic [RESOLUTION-1:0] sar_reg;
-    logic [RESOLUTION-1:0] sar_reg_next;
-    logic eoc;
-
-    assign eoc = seq[0];
-
-    logic start_req;
-    logic seq_at_msb;
-    assign seq_at_msb = seq[RESOLUTION];
-
-    always_ff @(negedge clk_i or negedge rst_n_tree) begin
-        if (!rst_n_tree) start_req <= 1'b0;
-        else if (seq_at_msb) start_req <= 1'b0;
-        else start_req <= 1'b1;
-    end
-
-    logic seq_rst;
-    assign seq_rst = ~rst_n_tree | start_req;
-
-    always_comb begin
-        sar_reg_next = sar_reg;
-        for (int i = 0; i < RESOLUTION; i++) begin
-            if (seq[i+1]) sar_reg_next[i] = out_p ? 1'b1 : 1'b0;
-        end
-        for (int i = 0; i < RESOLUTION-1; i++) begin
-            if (seq[i+2]) sar_reg_next[i] = 1'b1;
-        end
-    end
-
-    always_ff @(posedge valid_clk or posedge seq_rst) begin
-        if (seq_rst) begin
-
-            seq     <= {1'b1, {RESOLUTION{1'b0}}};
-            sar_reg <= {1'b1, {(RESOLUTION-1){1'b0}}};
-        end else begin
-            seq     <= seq >> 1;
-            sar_reg <= sar_reg_next;
-        end
-    end
-
-    always_ff @(posedge eoc or negedge rst_n_tree) begin
-        if (!rst_n_tree) dout <= '0;
-        else dout <= sar_reg;
-    end
-
-    logic comp_trigger_raw;
-    gf180mcu_fd_sc_mcu7t5v0__nor3_4 comp_trigger_nor (
-        .A1(valid_clk), .A2(eoc), .A3(start_req), .ZN(comp_trigger_raw)
+    // DELAYED CLOCK FIX: Wait for SAR combinational logic to settle 
+    // before clocking the SAR register to prevent Setup/Hold violations
+    logic seq_clk;
+    gf180mcu_fd_sc_mcu7t5v0__dlyd_1 clock_delay_buffer (
+        .I(valid_clk),
+        .Z(seq_clk)
     );
 
-    logic comp_trigger;
+    // ------------------------------------------------------------
+    // Bit sequencer (N+1 One-Hot Mask)
+    // ------------------------------------------------------------
+    logic rst_cond;
+    assign rst_cond = ~rst_n | phi_bottom;
 
-    (* keep = "true" *) logic [260:0] dly_chain;
+    // Use a 9-bit mask for 8-bit resolution. 
+    // The '1' drops into mask[0] to synchronously trigger EOC.
+    logic [RESOLUTION:0]    mask;
+    logic [RESOLUTION-1:0]  sar_reg;
+    logic                   eoc;
+
+    assign eoc = mask[0];
+
+    // UPDATED: Now driven by the delayed clock (seq_clk) instead of valid_clk
+    always_ff @(posedge seq_clk or posedge rst_cond) begin
+        if (rst_cond) begin
+            mask    <= {1'b1, {RESOLUTION{1'b0}}};     // e.g. 9'b1_0000_0000
+            sar_reg <= {1'b1, {(RESOLUTION-1){1'b0}}}; // e.g. 8'b1000_0000
+        end else begin
+            mask <= mask >> 1;
+            // Use mask[RESOLUTION:1] as the active 8-bit trial vector
+            sar_reg <= (out_p ? (sar_reg & ~mask[RESOLUTION:1]) : sar_reg) | (mask[RESOLUTION:1] >> 1);
+        end
+    end
+
+    // d_out perfectly latches the moment mask[0] becomes 1
+    // It captures sar_reg BEFORE d_ctrl is zeroed out by EOC
+    always_ff @(posedge eoc or negedge rst_n) begin
+        if (!rst_n) d_out <= '0;
+        else        d_out <= sar_reg;
+    end
+
+    // ------------------------------------------------------------
+    // DAC Control Masking (NEW)
+    // ------------------------------------------------------------
+    logic force_dac_zero;
+    
+    // Force DAC control words to 0 during reset, tracking (phi_bottom = 1), 
+    // and after conversion finishes (eoc = 1).
+    assign force_dac_zero = ~rst_n | phi_bottom | eoc;
+
+    // When phi_bottom falls (entering convert), force_dac_zero goes low.
+    // d_ctrl instantly assumes the value of sar_reg (which sits at 1000_0000).
+    assign d_ctrl   = force_dac_zero ? '0 : sar_reg;
+    assign d_ctrl_n = ~d_ctrl;
+
+    // ------------------------------------------------------------
+    // Async clk_o ring
+    // ------------------------------------------------------------
+    logic phi_bottom_neg;
+    assign phi_bottom_n = phi_bottom_neg;
+    gf180mcu_fd_sc_mcu7t5v0__inv_1 phi_bottom_inv (
+        .I(phi_bottom),
+        .ZN(phi_bottom_neg)
+    );
+
+    logic comp_trigger_raw;
+    // NOTE: Keep valid_clk here (not seq_clk) to avoid adding unwanted 
+    // delay to the strobe generator ring oscillator.
+    // The oscillator only begins when phi_bottom falls to 0.
+    gf180mcu_fd_sc_mcu7t5v0__nor3_4 comp_trigger_nor (
+        .A1(valid_clk),
+        .A2(eoc),
+        .A3(phi_bottom),
+        .ZN(comp_trigger_raw)
+    );
+
+    logic [NUM_DELAY_CELLS:0] dly_chain;
     assign dly_chain[0] = comp_trigger_raw;
-
     generate
-        for (genvar g = 0; g < 260; g++) begin : dly_stage
+        for (genvar g = 0; g < NUM_DELAY_CELLS; g++) begin : dly_stage
             gf180mcu_fd_sc_mcu7t5v0__buf_1 delay_buf (
                 .I(dly_chain[g]),
                 .Z(dly_chain[g+1])
             );
         end
-
-        gf180mcu_fd_sc_mcu7t5v0__buf_16 comp_trigger_driver (
-            .I(dly_chain[260]),
-            .Z(comp_trigger)
-        );
     endgenerate
 
-    assign clk_o    = comp_trigger;
-    assign dac_ctrl = sar_reg;
+    gf180mcu_fd_sc_mcu7t5v0__buf_16 comp_trigger_driver (
+        .I(dly_chain[NUM_DELAY_CELLS]),
+        .Z(clk_o)
+    );
 
 endmodule

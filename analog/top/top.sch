@@ -6,1389 +6,172 @@ S {}
 F {}
 E {}
 N 880 -1180 880 -1150 {lab=VDD}
-N 1160 -910 1200 -910 {lab=0}
-N 1160 -730 1200 -730 {lab=VDD}
-N 700 -1120 730 -1120 {lab=CLK}
-N 700 -1100 730 -1100 {lab=VIN}
-N 1160 -830 1200 -830 {lab=VRef}
-N 1160 -790 1200 -790 {lab=CLK}
-N -20 -640 -20 -620 {lab=0}
-N 100 -720 170 -720 {lab=OUTP}
+N 700 -1100 730 -1100 {lab=phi_bottom}
+N 700 -1080 730 -1080 {lab=VIN}
+N -90 -590 -90 -570 {lab=0}
+N 100 -720 150 -720 {lab=#net1}
 N 880 -1050 880 -1020 {lab=0}
-N 350 -510 350 -490 {lab=0}
-N -50 -780 -50 -770 {lab=CLK_O}
-N -50 -780 180 -780 {lab=CLK_O}
-N 1030 -1100 1030 -950 {lab=VSAMPLE}
-N 1030 -950 1200 -950 {lab=VSAMPLE}
-N 590 -880 600 -880 {lab=CTRL0}
-N 580 -860 600 -860 {lab=CTRL1}
-N 570 -840 600 -840 {lab=CTRL2}
-N 560 -820 600 -820 {lab=CTRL3}
-N 550 -800 600 -800 {lab=CTRL4}
-N 540 -780 600 -780 {lab=CTRL5}
-N 530 -760 600 -760 {lab=CTRL6}
-N 1070 -1010 1200 -1010 {lab=#net1}
-N 1070 -990 1200 -990 {lab=#net2}
-N 1070 -970 1200 -970 {lab=#net3}
-N 1070 -930 1200 -930 {lab=#net4}
-N 1070 -870 1200 -870 {lab=#net5}
-N 620 -640 1000 -640 {lab=CTRL0}
-N 620 -620 1000 -620 {lab=CTRL1}
-N 1500 -1260 1500 -1030 {lab=VX}
-N 1500 -1010 1540 -1010 {lab=VX_LSB}
-N -665 -900 -665 -860 {lab=0}
-N -665 -1000 -665 -960 {lab=CLK}
-N -660 -670 -660 -630 {lab=0}
-N -660 -770 -660 -730 {lab=VDD}
-N -550 -670 -550 -630 {lab=0}
-N -550 -770 -550 -730 {lab=RST}
-N 760 -960 760 -930 {lab=VDD}
-N 770 -690 770 -670 {lab=0}
-N 590 -880 590 -660 {lab=CTRL0}
-N 590 -660 620 -640 {lab=CTRL0}
-N 580 -860 580 -650 {lab=CTRL1}
-N 580 -650 620 -620 {lab=CTRL1}
-N 570 -840 570 -630 {lab=CTRL2}
-N 570 -630 610 -600 {lab=CTRL2}
-N 610 -600 1000 -600 {lab=CTRL2}
-N 560 -820 560 -610 {lab=CTRL3}
-N 560 -610 600 -580 {lab=CTRL3}
-N 600 -580 1000 -580 {lab=CTRL3}
-N 550 -800 550 -580 {lab=CTRL4}
-N 550 -580 590 -560 {lab=CTRL4}
-N 590 -560 1000 -560 {lab=CTRL4}
-N 540 -780 540 -560 {lab=CTRL5}
-N 540 -560 570 -540 {lab=CTRL5}
-N 570 -540 1000 -540 {lab=CTRL5}
-N 490 -880 590 -880 {lab=CTRL0}
-N 490 -860 580 -860 {lab=CTRL1}
-N 490 -840 570 -840 {lab=CTRL2}
-N 490 -820 560 -820 {lab=CTRL3}
-N 490 -800 550 -800 {lab=CTRL4}
-N 490 -780 540 -780 {lab=CTRL5}
-N 490 -760 530 -760 {lab=CTRL6}
-N 530 -760 530 -540 {lab=CTRL6}
-N 530 -540 560 -520 {lab=CTRL6}
-N 560 -520 1000 -520 {lab=CTRL6}
-N 520 -740 600 -740 {lab=CTRL7}
-N 520 -740 520 -530 {lab=CTRL7}
-N 520 -530 570 -500 {lab=CTRL7}
-N 570 -500 1000 -500 {lab=CTRL7}
-N -100 -1260 -100 -710 {lab=VX}
+N 350 -330 350 -310 {lab=0}
+N 620 -640 1000 -640 {lab=#net2}
+N 620 -620 1000 -620 {lab=#net3}
+N 580 -860 580 -650 {lab=#net3}
+N 580 -650 620 -620 {lab=#net3}
+N 570 -840 570 -630 {lab=#net4}
+N 570 -630 610 -600 {lab=#net4}
+N 610 -600 1000 -600 {lab=#net4}
+N 560 -820 560 -610 {lab=#net5}
+N 560 -610 600 -580 {lab=#net5}
+N 600 -580 1000 -580 {lab=#net5}
+N 550 -800 550 -580 {lab=#net6}
+N 550 -580 590 -560 {lab=#net6}
+N 590 -560 1000 -560 {lab=#net6}
+N 540 -780 540 -560 {lab=#net7}
+N 540 -560 570 -540 {lab=#net7}
+N 570 -540 1000 -540 {lab=#net7}
+N 490 -880 590 -880 {lab=#net2}
+N 490 -860 580 -860 {lab=#net3}
+N 490 -840 570 -840 {lab=#net4}
+N 490 -820 560 -820 {lab=#net5}
+N 490 -800 550 -800 {lab=#net6}
+N 490 -780 540 -780 {lab=#net7}
+N 490 -760 530 -760 {lab=#net8}
+N 530 -760 530 -540 {lab=#net8}
+N 530 -540 560 -520 {lab=#net8}
+N 560 -520 1000 -520 {lab=#net8}
+N 520 -740 520 -530 {lab=#net9}
+N 520 -530 570 -500 {lab=#net9}
+N 570 -500 1000 -500 {lab=#net9}
 N -100 -1260 1500 -1260 {lab=VX}
-N -150 -690 -100 -690 {lab=#net6}
-N -850 -1000 -850 -960 {lab=VIN}
-N -850 -900 -850 -860 {lab=0}
-N -750 -670 -750 -630 {lab=0}
-N -750 -770 -750 -730 {lab=VRef}
-N 180 -780 180 -770 {lab=CLK_O}
-N 180 -770 210 -770 {lab=CLK_O}
-N 100 -680 150 -680 {lab=OUTN}
-N 150 -710 150 -680 {lab=OUTN}
-N 150 -710 210 -710 {lab=OUTN}
-N 170 -720 170 -690 {lab=OUTP}
-N 170 -690 210 -690 {lab=OUTP}
-N -1005 -680 -1005 -640 {lab=0}
-N -1005 -780 -1005 -740 {lab=CLK_N}
-N 490 -740 520 -740 {lab=CTRL7}
+N 100 -680 150 -680 {lab=#net10}
+N 490 -740 520 -740 {lab=#net9}
+N -140 -1260 -100 -1260 {lab=VX}
+N -300 -660 -250 -660 {lab=VCM}
+N -50 -830 210 -830 {lab=CLK_O}
+N 190 -670 210 -670 {lab=#net1}
+N 1030 -1100 1030 -950 {lab=#net11}
+N 1030 -950 1200 -950 {lab=#net11}
+N 900 -880 1090 -1010 {lab=#net12}
+N 1090 -1010 1200 -1010 {lab=#net12}
 N 1160 -1030 1200 -1030 {lab=VDD}
-N 900 -880 1070 -1010 {lab=#net1}
-N 900 -860 1070 -990 {lab=#net2}
-N 900 -840 1070 -970 {lab=#net3}
-N 900 -820 1070 -930 {lab=#net4}
-N 1070 -850 1200 -850 {lab=#net7}
-N 900 -800 1070 -870 {lab=#net5}
-N 900 -780 1070 -850 {lab=#net7}
-N 1160 -890 1200 -890 {lab=VDD}
-N 1000 -500 1200 -550 {lab=CTRL7}
-N 1000 -520 1200 -570 {lab=CTRL6}
-N 1000 -540 1200 -590 {lab=CTRL5}
-N 1000 -560 1200 -610 {lab=CTRL4}
-N 1160 -630 1200 -630 {lab=0}
-N 1160 -750 1200 -750 {lab=0}
-N 1000 -580 1140 -650 {lab=CTRL3}
-N 1140 -650 1200 -650 {lab=CTRL3}
-N 1000 -600 1130 -670 {lab=CTRL2}
-N 1130 -670 1200 -670 {lab=CTRL2}
-N 1000 -620 1130 -690 {lab=CTRL1}
-N 1130 -690 1200 -690 {lab=CTRL1}
-N 1000 -640 1130 -710 {lab=CTRL0}
-N 1130 -710 1200 -710 {lab=CTRL0}
-N 900 -740 1110 -770 {lab=#net8}
-N 1110 -770 1200 -770 {lab=#net8}
-N 900 -760 1120 -810 {lab=#net9}
-N 1120 -810 1200 -810 {lab=#net9}
-N -200 -620 -200 -580 {lab=0}
-N -200 -690 -200 -680 {lab=#net6}
-N -200 -690 -150 -690 {lab=#net6}
+N 900 -860 1090 -990 {lab=#net13}
+N 1090 -990 1200 -990 {lab=#net13}
+N 900 -840 1090 -970 {lab=#net14}
+N 1090 -970 1200 -970 {lab=#net14}
+N 900 -820 1070 -930 {lab=#net15}
+N 1070 -930 1200 -930 {lab=#net15}
+N 1160 -910 1200 -910 {lab=VDD}
+N 1120 -890 1200 -890 {lab=0}
+N 900 -800 1060 -870 {lab=#net16}
+N 1060 -870 1200 -870 {lab=#net16}
+N 900 -780 1060 -850 {lab=#net17}
+N 1060 -850 1200 -850 {lab=#net17}
+N 1160 -830 1200 -830 {lab=VRef}
+N 900 -760 1060 -810 {lab=#net18}
+N 1060 -810 1200 -810 {lab=#net18}
+N 1160 -790 1200 -790 {lab=phi_top_n}
+N 900 -740 1060 -750 {lab=#net19}
+N 1060 -750 1200 -750 {lab=#net19}
+N 1160 -730 1200 -730 {lab=0}
+N 1130 -710 1200 -710 {lab=VDD}
+N 1000 -640 1130 -690 {lab=#net2}
+N 1130 -690 1200 -690 {lab=#net2}
+N 1000 -620 1130 -670 {lab=#net3}
+N 1130 -670 1200 -670 {lab=#net3}
+N 1000 -600 1130 -650 {lab=#net4}
+N 1130 -650 1200 -650 {lab=#net4}
+N 1000 -580 1130 -630 {lab=#net5}
+N 1130 -630 1200 -630 {lab=#net5}
+N 1000 -560 1100 -550 {lab=#net6}
+N 1100 -550 1200 -550 {lab=#net6}
+N 1000 -540 1100 -510 {lab=#net7}
+N 1100 -510 1200 -510 {lab=#net7}
+N 1000 -520 1100 -490 {lab=#net8}
+N 1100 -490 1200 -490 {lab=#net8}
+N 1000 -500 1100 -470 {lab=#net9}
+N 1100 -470 1200 -470 {lab=#net9}
+N 150 -910 150 -850 {lab=CLK}
+N 150 -850 210 -850 {lab=CLK}
+N 1500 -1260 1500 -1030 {lab=VX}
+N 490 -720 640 -720 {lab=#net12}
+N 640 -880 640 -720 {lab=#net12}
+N 640 -880 900 -880 {lab=#net12}
+N 490 -700 650 -700 {lab=#net13}
+N 650 -860 650 -700 {lab=#net13}
+N 650 -860 900 -860 {lab=#net13}
+N 490 -680 660 -680 {lab=#net14}
+N 660 -840 660 -680 {lab=#net14}
+N 660 -840 900 -840 {lab=#net14}
+N 490 -660 670 -660 {lab=#net15}
+N 670 -820 670 -660 {lab=#net15}
+N 670 -820 900 -820 {lab=#net15}
+N 590 -880 590 -670 {lab=#net2}
+N 590 -670 620 -640 {lab=#net2}
+N 490 -640 610 -640 {lab=#net16}
+N 610 -640 630 -650 {lab=#net16}
+N 630 -650 690 -650 {lab=#net16}
+N 690 -800 690 -650 {lab=#net16}
+N 690 -800 900 -800 {lab=#net16}
+N 490 -620 600 -620 {lab=#net17}
+N 600 -620 630 -630 {lab=#net17}
+N 630 -630 710 -630 {lab=#net17}
+N 710 -780 710 -630 {lab=#net17}
+N 710 -780 900 -780 {lab=#net17}
+N 490 -600 590 -600 {lab=#net18}
+N 590 -600 620 -610 {lab=#net18}
+N 620 -610 730 -610 {lab=#net18}
+N 730 -760 730 -610 {lab=#net18}
+N 730 -760 900 -760 {lab=#net18}
+N 490 -580 510 -590 {lab=#net19}
+N 510 -590 750 -590 {lab=#net19}
+N 750 -740 750 -590 {lab=#net19}
+N 750 -740 900 -740 {lab=#net19}
+N 150 -680 210 -690 {lab=#net10}
+N 150 -720 190 -670 {lab=#net1}
+N 700 -1120 730 -1120 {lab=phi_bottom_n}
+N -130 -830 -50 -830 {lab=CLK_O}
+N 40 -720 100 -720 {lab=#net1}
+N 40 -680 100 -680 {lab=#net10}
+N -260 -1260 -140 -1260 {lab=VX}
+N -260 -1260 -260 -750 {lab=VX}
+N -260 -750 -250 -750 {lab=VX}
+N -570 -970 -570 -910 {lab=VDD}
+N -510 -970 -510 -910 {lab=VSS}
+N -570 -820 -570 -760 {lab=CLK}
+N -490 -820 -490 -760 {lab=VRef}
+N -800 -620 -800 -580 {lab=DOUT7}
+N -650 -820 -650 -760 {lab=VCM}
+N -730 -820 -730 -760 {lab=VIN}
+N -800 -820 -800 -760 {lab=RST}
+N -780 -620 -780 -580 {lab=DOUT6}
+N -760 -620 -760 -580 {lab=DOUT5}
+N -740 -620 -740 -580 {lab=DOUT4}
+N -720 -620 -720 -580 {lab=DOUT3}
+N -700 -620 -700 -580 {lab=DOUT2}
+N -680 -620 -680 -580 {lab=DOUT1}
+N -660 -620 -660 -580 {lab=DOUT0}
+N -650 -970 -650 -910 {lab=VDD}
 C {lab_wire.sym} 880 -1180 0 0 {name=p1 sig_type=std_logic lab=VDD}
-C {lab_wire.sym} 1160 -730 0 0 {name=p2 sig_type=std_logic lab=VDD}
-C {lab_wire.sym} 1160 -790 0 0 {name=p8 sig_type=std_logic lab=CLK}
-C {lab_wire.sym} -20 -760 1 0 {name=p9 sig_type=std_logic lab=VDD}
-C {code_shown.sym} 1960 -1090 0 0 {name=s2 only_toplevel=false 
+C {lab_wire.sym} 1130 -710 0 0 {name=p2 sig_type=std_logic lab=VDD}
+C {lab_wire.sym} -90 -810 1 0 {name=p9 sig_type=std_logic lab=VDD}
+C {code_shown.sym} -1310 -1560 0 0 {name=s2 only_toplevel=false 
 value="
-.subckt sar_adc_logic VDD VSS clk_i clk_o dac_ctrl[0] dac_ctrl[1] dac_ctrl[2] dac_ctrl[3]
-+ dac_ctrl[4] dac_ctrl[5] dac_ctrl[6] dac_ctrl[7] dout[0] dout[1] dout[2] dout[3]
-+ dout[4] dout[5] dout[6] dout[7] out_n out_p rst_n
-XFILLER_22_177 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xdly_stage\\[203\\].delay_buf dly_stage\\[203\\].delay_buf/I dly_stage\\[204\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[132\\].delay_buf dly_stage\\[132\\].delay_buf/I dly_stage\\[133\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_18_203 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XTAP_TAPCELL_ROW_8_88 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_24_239 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XPHY_EDGE_ROW_20_Left_50 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[84\\].delay_buf dly_stage\\[84\\].delay_buf/I dly_stage\\[85\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_15_239 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_062_ wire25/Z _105_/Q _106_/Q _063_/B VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__aoi21_2
-XFILLER_20_231 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xdly_stage\\[33\\].delay_buf dly_stage\\[33\\].delay_buf/I dly_stage\\[34\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_045_ _087_/Q _057_/A1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkinv_1
-Xdly_stage\\[253\\].delay_buf dly_stage\\[253\\].delay_buf/I dly_stage\\[254\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xhold30 _083_/Q _097_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyc_1
-Xdly_stage\\[182\\].delay_buf dly_stage\\[182\\].delay_buf/I dly_stage\\[183\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_19_150 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[202\\].delay_buf dly_stage\\[202\\].delay_buf/I dly_stage\\[203\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_15_76 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_25_142 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xoutput7 _085_/Q dac_ctrl[4] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-Xdly_stage\\[131\\].delay_buf dly_stage\\[131\\].delay_buf/I dly_stage\\[132\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[83\\].delay_buf dly_stage\\[83\\].delay_buf/I dly_stage\\[84\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_18_237 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_24_218 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[32\\].delay_buf dly_stage\\[32\\].delay_buf/I dly_stage\\[33\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_8_89 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XPHY_EDGE_ROW_12_Right_12 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XPHY_EDGE_ROW_21_Right_21 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_0_36 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_2_155 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-Xdly_stage\\[252\\].delay_buf dly_stage\\[252\\].delay_buf/I dly_stage\\[253\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_061_ _061_/A1 _104_/Q _061_/B _085_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__oai21_1
-XFILLER_18_43 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_5_79 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[181\\].delay_buf dly_stage\\[181\\].delay_buf/I dly_stage\\[182\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_044_ _088_/Q _055_/A1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkinv_1
-Xdly_stage\\[201\\].delay_buf dly_stage\\[201\\].delay_buf/I dly_stage\\[202\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_20_88 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_4_239 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xhold31 _088_/Q _092_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyc_1
-Xdly_stage\\[130\\].delay_buf dly_stage\\[130\\].delay_buf/I dly_stage\\[131\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xclkbuf_1_1__f_valid_clk_regs clkbuf_0_valid_clk_regs/Z _103_/CLK VDD VDD VSS VSS
-+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-XFILLER_19_162 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xdly_stage\\[149\\].delay_buf dly_stage\\[149\\].delay_buf/I dly_stage\\[150\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XPHY_EDGE_ROW_6_Right_6 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[82\\].delay_buf dly_stage\\[82\\].delay_buf/I dly_stage\\[83\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xoutput10 _090_/Q dac_ctrl[7] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-Xoutput8 _084_/Q dac_ctrl[5] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-XFILLER_13_124 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_13_146 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[31\\].delay_buf dly_stage\\[31\\].delay_buf/I dly_stage\\[32\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[251\\].delay_buf dly_stage\\[251\\].delay_buf/I dly_stage\\[252\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_15_208 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[180\\].delay_buf dly_stage\\[180\\].delay_buf/I dly_stage\\[181\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[200\\].delay_buf dly_stage\\[200\\].delay_buf/I dly_stage\\[201\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[199\\].delay_buf dly_stage\\[199\\].delay_buf/I dly_stage\\[200\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_060_ wire25/Z _104_/Q _105_/Q _061_/B VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__aoi21_1
-XFILLER_29_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[219\\].delay_buf dly_stage\\[219\\].delay_buf/I dly_stage\\[220\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XPHY_EDGE_ROW_8_Left_38 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-X_043_ _089_/Q _053_/A1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkinv_1
-Xdly_stage\\[148\\].delay_buf dly_stage\\[148\\].delay_buf/I dly_stage\\[149\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_20_34 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_3_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[81\\].delay_buf dly_stage\\[81\\].delay_buf/I dly_stage\\[82\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xhold32 _087_/Q _093_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyc_1
-XFILLER_16_111 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_16_144 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-Xoutput11 _091_/Q dout[0] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-Xoutput9 _083_/Q dac_ctrl[6] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-Xdly_stage\\[30\\].delay_buf dly_stage\\[30\\].delay_buf/I dly_stage\\[31\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_11_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_16_199 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_22_103 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[49\\].delay_buf dly_stage\\[49\\].delay_buf/I dly_stage\\[50\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_13_169 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XTAP_TAPCELL_ROW_15_109 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[250\\].delay_buf dly_stage\\[250\\].delay_buf/I dly_stage\\[251\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_5_176 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[198\\].delay_buf dly_stage\\[198\\].delay_buf/I dly_stage\\[199\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[218\\].delay_buf dly_stage\\[218\\].delay_buf/I dly_stage\\[219\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[147\\].delay_buf dly_stage\\[147\\].delay_buf/I dly_stage\\[148\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XPHY_EDGE_ROW_24_Left_54 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_18_34 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_20_212 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[80\\].delay_buf dly_stage\\[80\\].delay_buf/I dly_stage\\[81\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_11_234 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_7_238 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[99\\].delay_buf dly_stage\\[99\\].delay_buf/I dly_stage\\[99\\].delay_buf/Z
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_042_ _107_/Q _108_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkinv_1
-XFILLER_6_26 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xhold33 _089_/Q _091_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyc_1
-XFILLER_19_142 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xdly_stage\\[48\\].delay_buf dly_stage\\[48\\].delay_buf/I dly_stage\\[49\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_15_57 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XPHY_EDGE_ROW_11_Left_41 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xoutput12 _092_/Q dout[1] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-XTAP_TAPCELL_ROW_18_118 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_26_34 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[197\\].delay_buf dly_stage\\[197\\].delay_buf/I dly_stage\\[198\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_13_126 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_13_137 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[217\\].delay_buf dly_stage\\[217\\].delay_buf/I dly_stage\\[218\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_10_107 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_20_124 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[146\\].delay_buf dly_stage\\[146\\].delay_buf/I dly_stage\\[147\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_17_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_5_199 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_23_68 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_9_26 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_0_60 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[98\\].delay_buf dly_stage\\[98\\].delay_buf/I dly_stage\\[99\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_9_91 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_7_206 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[47\\].delay_buf dly_stage\\[47\\].delay_buf/I dly_stage\\[48\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xclkload0 _103_/CLK clkload0/Z VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkbuf_2
-XFILLER_1_60 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xhold34 _090_/Q _098_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyc_1
-XFILLER_19_154 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_19_176 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[196\\].delay_buf dly_stage\\[196\\].delay_buf/I dly_stage\\[197\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xcomp_trigger_driver comp_trigger_driver/I clk_o VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_16
-XFILLER_25_146 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xoutput13 _093_/Q dout[2] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-XPHY_EDGE_ROW_19_Right_19 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XPHY_EDGE_ROW_28_Right_28 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XTAP_TAPCELL_ROW_18_119 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[216\\].delay_buf dly_stage\\[216\\].delay_buf/I dly_stage\\[217\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[145\\].delay_buf dly_stage\\[145\\].delay_buf/I dly_stage\\[146\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_23_133 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_12_37 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_20_125 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[97\\].delay_buf dly_stage\\[97\\].delay_buf/I dly_stage\\[98\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xclkbuf_0_valid_clk valid_clk_xor/Z clkbuf_0_valid_clk/Z VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-XFILLER_23_36 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[46\\].delay_buf dly_stage\\[46\\].delay_buf/I dly_stage\\[47\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_0_29 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XTAP_TAPCELL_ROW_0_61 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XTAP_TAPCELL_ROW_9_92 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_1_50 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_27_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_64
-XFILLER_6_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[195\\].delay_buf dly_stage\\[195\\].delay_buf/I dly_stage\\[196\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[215\\].delay_buf dly_stage\\[215\\].delay_buf/I dly_stage\\[216\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_6_28 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_6_82 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[144\\].delay_buf dly_stage\\[144\\].delay_buf/I dly_stage\\[145\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_16_103 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_24_191 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_26_142 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xoutput14 _094_/Q dout[3] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-Xclkbuf_1_0__f_eoc clkbuf_0_eoc/Z comp_trigger_nor/A2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-Xdly_stage\\[96\\].delay_buf dly_stage\\[96\\].delay_buf/I dly_stage\\[97\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_13_139 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_23_134 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_10_109 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_20_126 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[45\\].delay_buf dly_stage\\[45\\].delay_buf/I dly_stage\\[46\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_23_212 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[194\\].delay_buf dly_stage\\[194\\].delay_buf/I dly_stage\\[195\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_20_204 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_0_62 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XTAP_TAPCELL_ROW_9_93 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_18_37 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[214\\].delay_buf dly_stage\\[214\\].delay_buf/I dly_stage\\[215\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XPHY_EDGE_ROW_28_Left_58 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[143\\].delay_buf dly_stage\\[143\\].delay_buf/I dly_stage\\[144\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_099_ _100_/Q _099_/RN _103_/CLK _099_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XFILLER_28_101 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_29_36 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-XFILLER_19_178 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_28_167 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_28_189 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_6_18 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_29_151 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-X_107__26 _107_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__tiel
-XFILLER_25_104 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_6_83 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[95\\].delay_buf dly_stage\\[95\\].delay_buf/I dly_stage\\[96\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_24_170 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XPHY_EDGE_ROW_1_Right_1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XTAP_TAPCELL_ROW_26_143 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xoutput15 _095_/Q dout[4] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-XFILLER_22_107 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_7_50 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XPHY_EDGE_ROW_15_Left_45 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[44\\].delay_buf dly_stage\\[44\\].delay_buf/I dly_stage\\[45\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_26_37 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_64
-XTAP_TAPCELL_ROW_23_135 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_29_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_3_73 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_26_210 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[193\\].delay_buf dly_stage\\[193\\].delay_buf/I dly_stage\\[194\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_4_95 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[213\\].delay_buf dly_stage\\[213\\].delay_buf/I dly_stage\\[214\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_9_18 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xdly_stage\\[142\\].delay_buf dly_stage\\[142\\].delay_buf/I dly_stage\\[143\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_20_216 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_0_63 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_11_238 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XPHY_EDGE_ROW_3_Left_33 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[94\\].delay_buf dly_stage\\[94\\].delay_buf/I dly_stage\\[95\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_098_ _098_/D _050_/I _098_/CLK _098_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XFILLER_10_94 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_3_234 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XTAP_TAPCELL_ROW_10_94 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XTAP_TAPCELL_ROW_29_152 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XTAP_TAPCELL_ROW_6_84 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[43\\].delay_buf dly_stage\\[43\\].delay_buf/I dly_stage\\[44\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_25_138 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_26_144 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xoutput16 _096_/Q dout[5] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-XFILLER_15_182 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_21_152 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_21_185 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_7_62 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XPHY_EDGE_ROW_15_Right_15 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XPHY_EDGE_ROW_24_Right_24 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[192\\].delay_buf dly_stage\\[192\\].delay_buf/I dly_stage\\[193\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_12_174 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_3_74 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[212\\].delay_buf dly_stage\\[212\\].delay_buf/I dly_stage\\[213\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[141\\].delay_buf dly_stage\\[141\\].delay_buf/I dly_stage\\[142\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_4_30 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_13_72 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_0_64 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[93\\].delay_buf dly_stage\\[93\\].delay_buf/I dly_stage\\[94\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[109\\].delay_buf dly_stage\\[109\\].delay_buf/I dly_stage\\[110\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_11_206 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_20_239 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_9_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[42\\].delay_buf dly_stage\\[42\\].delay_buf/I dly_stage\\[43\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_097_ _097_/D _050_/I _098_/CLK _097_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XTAP_TAPCELL_ROW_10_95 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xhold27 _086_/Q _094_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyc_1
-XTAP_TAPCELL_ROW_29_153 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_15_18 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xoutput17 _097_/Q dout[6] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-Xdly_stage\\[191\\].delay_buf dly_stage\\[191\\].delay_buf/I dly_stage\\[192\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_21_50 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[211\\].delay_buf dly_stage\\[211\\].delay_buf/I dly_stage\\[212\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[140\\].delay_buf dly_stage\\[140\\].delay_buf/I dly_stage\\[141\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_21_120 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[159\\].delay_buf dly_stage\\[159\\].delay_buf/I dly_stage\\[160\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_12_197 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_3_75 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_26_201 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_5_138 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[92\\].delay_buf dly_stage\\[92\\].delay_buf/I dly_stage\\[93\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_17_212 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_4_171 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[108\\].delay_buf dly_stage\\[108\\].delay_buf/I dly_stage\\[109\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_23_237 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XTAP_TAPCELL_ROW_0_65 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[41\\].delay_buf dly_stage\\[41\\].delay_buf/I dly_stage\\[42\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_20_218 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_11_218 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_10_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[190\\].delay_buf dly_stage\\[190\\].delay_buf/I dly_stage\\[191\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_096_ _096_/D _050_/I _098_/CLK _096_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XTAP_TAPCELL_ROW_10_96 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xhold28 _084_/Q _096_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyc_1
-XFILLER_10_96 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_19_72 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XTAP_TAPCELL_ROW_29_154 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[210\\].delay_buf dly_stage\\[210\\].delay_buf/I dly_stage\\[211\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_0_206 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-XFILLER_18_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xoutput18 _098_/Q dout[7] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-Xdly_stage\\[229\\].delay_buf dly_stage\\[229\\].delay_buf/I dly_stage\\[230\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_079_ _079_/A1 _082_/A2 _088_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XFILLER_24_162 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[158\\].delay_buf dly_stage\\[158\\].delay_buf/I dly_stage\\[159\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_21_110 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XPHY_EDGE_ROW_5_Right_5 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[91\\].delay_buf dly_stage\\[91\\].delay_buf/I dly_stage\\[92\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[107\\].delay_buf dly_stage\\[107\\].delay_buf/I dly_stage\\[108\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XPHY_EDGE_ROW_19_Left_49 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_26_235 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[40\\].delay_buf dly_stage\\[40\\].delay_buf/I dly_stage\\[41\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_17_202 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_27_72 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[59\\].delay_buf dly_stage\\[59\\].delay_buf/I dly_stage\\[60\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_23_216 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_4_10 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_9_220 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_0_66 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_6_201 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-Xdly_stage\\[228\\].delay_buf dly_stage\\[228\\].delay_buf/I dly_stage\\[229\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_095_ _095_/D _050_/I _095_/CLK _095_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-Xhold29 _085_/Q _095_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyc_1
-Xdly_stage\\[157\\].delay_buf dly_stage\\[157\\].delay_buf/I dly_stage\\[158\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XPHY_EDGE_ROW_7_Left_37 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XTAP_TAPCELL_ROW_29_155 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[90\\].delay_buf dly_stage\\[90\\].delay_buf/I dly_stage\\[91\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_078_ _079_/A1 _081_/A2 _087_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XFILLER_24_174 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_24_185 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[106\\].delay_buf dly_stage\\[106\\].delay_buf/I dly_stage\\[107\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_15_196 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_7_10 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_21_177 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_8_104 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XPHY_EDGE_ROW_11_Right_11 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XPHY_EDGE_ROW_20_Right_20 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XTAP_TAPCELL_ROW_14_106 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[58\\].delay_buf dly_stage\\[58\\].delay_buf/I dly_stage\\[59\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_4_22 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[227\\].delay_buf dly_stage\\[227\\].delay_buf/I dly_stage\\[228\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_8_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xdly_stage\\[156\\].delay_buf dly_stage\\[156\\].delay_buf/I dly_stage\\[157\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_094_ _094_/D _050_/I _098_/CLK _094_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XPHY_EDGE_ROW_23_Left_53 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[105\\].delay_buf dly_stage\\[105\\].delay_buf/I dly_stage\\[106\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_27_194 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_3_205 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_3_238 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_29_156 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-X_077_ _082_/A1 _080_/A2 _086_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-Xdly_stage\\[57\\].delay_buf dly_stage\\[57\\].delay_buf/I dly_stage\\[58\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_15_142 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_7_88 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_17_115 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_21_189 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XPHY_EDGE_ROW_10_Left_40 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_12_189 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_14_107 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[226\\].delay_buf dly_stage\\[226\\].delay_buf/I dly_stage\\[227\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_23_207 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_23_218 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_4_163 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_4_185 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_4_34 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[155\\].delay_buf dly_stage\\[155\\].delay_buf/I dly_stage\\[156\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_22_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_13_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[104\\].delay_buf dly_stage\\[104\\].delay_buf/I dly_stage\\[105\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_10_232 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_6_225 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-X_093_ _093_/D _050_/I _095_/CLK _093_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XFILLER_19_118 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_28_107 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xdly_stage\\[56\\].delay_buf dly_stage\\[56\\].delay_buf/I dly_stage\\[57\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xinput1 out_n input1/Z VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-XTAP_TAPCELL_ROW_29_157 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xclkbuf_0_valid_clk_regs clkbuf_regs_0_valid_clk/Z clkbuf_0_valid_clk_regs/Z VDD VDD
-+ VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-X_076_ _082_/A1 _080_/A2 _085_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XFILLER_24_154 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_17_116 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_21_135 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[225\\].delay_buf dly_stage\\[225\\].delay_buf/I dly_stage\\[226\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_059_ _059_/A1 _103_/Q _059_/B _086_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__oai21_1
-XFILLER_12_113 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_16_32 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_14_108 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XTAP_TAPCELL_ROW_22_130 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_11_190 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XPHY_EDGE_ROW_9_Right_9 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[154\\].delay_buf dly_stage\\[154\\].delay_buf/I dly_stage\\[155\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_17_238 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[103\\].delay_buf dly_stage\\[103\\].delay_buf/I dly_stage\\[104\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_9_212 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_9_234 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[55\\].delay_buf dly_stage\\[55\\].delay_buf/I dly_stage\\[56\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xclkbuf_0_eoc_regs clkbuf_0_eoc_regs/I clkbuf_0_eoc_regs/Z VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-X_092_ _092_/D _050_/I _095_/CLK _092_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XFILLER_3_218 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-Xinput2 out_p wire25/I VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_075_ _082_/A1 _080_/A2 _084_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XFILLER_18_185 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[224\\].delay_buf dly_stage\\[224\\].delay_buf/I dly_stage\\[225\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_24_122 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-XFILLER_24_177 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_17_117 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xmax_cap20 _080_/A2 _082_/A2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_2
-Xdly_stage\\[153\\].delay_buf dly_stage\\[153\\].delay_buf/I dly_stage\\[154\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_058_ wire25/Z _103_/Q _104_/Q _059_/B VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__aoi21_1
-XFILLER_29_203 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_22_131 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_20_191 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[102\\].delay_buf dly_stage\\[102\\].delay_buf/I dly_stage\\[103\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_26_239 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_23_209 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[54\\].delay_buf dly_stage\\[54\\].delay_buf/I dly_stage\\[55\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_9_202 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_1_48 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_6_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_6_238 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[223\\].delay_buf dly_stage\\[223\\].delay_buf/I dly_stage\\[224\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_091_ _091_/D _050_/I _095_/CLK _091_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XPHY_EDGE_ROW_18_Right_18 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XPHY_EDGE_ROW_27_Right_27 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_10_24 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[152\\].delay_buf dly_stage\\[152\\].delay_buf/I dly_stage\\[153\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_074_ _108_/Q _080_/A2 _083_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XPHY_EDGE_ROW_27_Left_57 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_21_78 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-XFILLER_24_101 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_24_189 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[101\\].delay_buf dly_stage\\[101\\].delay_buf/I dly_stage\\[102\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_15_178 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_7_14 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_7_58 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XTAP_TAPCELL_ROW_25_140 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xmax_cap21 _108_/Q _081_/A1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_2
-Xclkbuf_1_0__f_valid_clk clkbuf_0_valid_clk/Z comp_trigger_nor/A1 VDD VDD VSS VSS
-+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-X_057_ _057_/A1 _102_/Q _057_/B _087_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__oai21_1
-XFILLER_16_34 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_21_148 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_12_115 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XPHY_EDGE_ROW_0_Right_0 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XTAP_TAPCELL_ROW_22_132 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[53\\].delay_buf dly_stage\\[53\\].delay_buf/I dly_stage\\[54\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XPHY_EDGE_ROW_14_Left_44 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_25_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_27_66 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_4_177 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xdly_stage\\[222\\].delay_buf dly_stage\\[222\\].delay_buf/I dly_stage\\[223\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[151\\].delay_buf dly_stage\\[151\\].delay_buf/I dly_stage\\[152\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_24_34 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_6_217 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-X_090_ _090_/D _081_/ZN _107_/CLK _090_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffsnq_1
-XFILLER_3_209 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[100\\].delay_buf dly_stage\\[99\\].delay_buf/Z dly_stage\\[101\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XPHY_EDGE_ROW_2_Left_32 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[119\\].delay_buf dly_stage\\[119\\].delay_buf/I dly_stage\\[120\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_073_ _081_/A1 _081_/A2 _073_/ZN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XFILLER_21_46 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_15_135 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XTAP_TAPCELL_ROW_25_141 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[52\\].delay_buf dly_stage\\[52\\].delay_buf/I dly_stage\\[53\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xmax_cap22 _079_/A1 _066_/A1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_2
-X_056_ wire25/I _102_/Q _103_/Q _057_/B VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__aoi21_1
-XFILLER_21_127 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_16_24 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_11_160 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_14_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_26_208 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_108_ _108_/D _050_/I clk_i _108_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1
-Xdly_stage\\[221\\].delay_buf dly_stage\\[221\\].delay_buf/I dly_stage\\[222\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_22_200 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-Xdly_stage\\[169\\].delay_buf dly_stage\\[169\\].delay_buf/I dly_stage\\[170\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[150\\].delay_buf dly_stage\\[150\\].delay_buf/I dly_stage\\[151\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[118\\].delay_buf dly_stage\\[118\\].delay_buf/I dly_stage\\[119\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_10_37 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_27_166 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[51\\].delay_buf dly_stage\\[51\\].delay_buf/I dly_stage\\[52\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_18_100 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_18_177 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_28_150 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-X_072_ _081_/A1 _081_/A2 _106_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XFILLER_15_158 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xmax_cap23 _082_/A1 _079_/A1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_2
-Xdly_stage\\[19\\].delay_buf dly_stage\\[19\\].delay_buf/I dly_stage\\[20\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_055_ _055_/A1 _101_/Q _055_/B _088_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__oai21_1
-XFILLER_14_191 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_21_139 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_20_183 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_29_206 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[220\\].delay_buf dly_stage\\[220\\].delay_buf/I dly_stage\\[221\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[239\\].delay_buf dly_stage\\[239\\].delay_buf/I dly_stage\\[240\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_107_ _107_/D _073_/ZN _107_/CLK _107_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffsnq_2
-Xdly_stage\\[168\\].delay_buf dly_stage\\[168\\].delay_buf/I dly_stage\\[169\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[117\\].delay_buf dly_stage\\[117\\].delay_buf/I dly_stage\\[118\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_13_234 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_9_238 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[50\\].delay_buf dly_stage\\[50\\].delay_buf/I dly_stage\\[51\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[69\\].delay_buf dly_stage\\[69\\].delay_buf/I dly_stage\\[70\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_18_167 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_27_112 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_2_211 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_4_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XPHY_EDGE_ROW_14_Right_14 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XPHY_EDGE_ROW_23_Right_23 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[18\\].delay_buf dly_stage\\[18\\].delay_buf/I dly_stage\\[19\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_071_ _081_/A1 _081_/A2 _105_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XFILLER_18_189 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xmax_cap24 _108_/Q _082_/A1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_2
-Xdly_stage\\[238\\].delay_buf dly_stage\\[238\\].delay_buf/I dly_stage\\[239\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_21_118 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[167\\].delay_buf dly_stage\\[167\\].delay_buf/I dly_stage\\[168\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_054_ wire25/I _101_/Q _102_/Q _055_/B VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__aoi21_1
-X_106_ _107_/Q _106_/RN _107_/CLK _106_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_2
-XPHY_EDGE_ROW_4_Right_4 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[116\\].delay_buf dly_stage\\[116\\].delay_buf/I dly_stage\\[117\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_4_18 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XPHY_EDGE_ROW_18_Left_48 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[68\\].delay_buf dly_stage\\[68\\].delay_buf/I dly_stage\\[69\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_0_172 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-XFILLER_24_37 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_64
-Xdly_stage\\[17\\].delay_buf dly_stage\\[17\\].delay_buf/I dly_stage\\[18\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_10_28 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[237\\].delay_buf dly_stage\\[237\\].delay_buf/I dly_stage\\[238\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_070_ _081_/A1 _081_/A2 _104_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-Xdly_stage\\[166\\].delay_buf dly_stage\\[166\\].delay_buf/I dly_stage\\[167\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_17_190 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_21_38 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XPHY_EDGE_ROW_6_Left_36 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_15_127 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_16_8 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-Xdly_stage\\[115\\].delay_buf dly_stage\\[115\\].delay_buf/I dly_stage\\[116\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_053_ _053_/A1 _100_/Q _053_/B _089_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__oai21_1
-XFILLER_11_152 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_11_174 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XTAP_TAPCELL_ROW_13_103 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-X_105_ _106_/Q _105_/RN _107_/CLK _105_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_2
-Xdly_stage\\[67\\].delay_buf dly_stage\\[67\\].delay_buf/I dly_stage\\[68\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_3_192 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_12_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_22_236 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[16\\].delay_buf dly_stage\\[16\\].delay_buf/I dly_stage\\[17\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[236\\].delay_buf dly_stage\\[236\\].delay_buf/I dly_stage\\[237\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[165\\].delay_buf dly_stage\\[165\\].delay_buf/I dly_stage\\[166\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_27_158 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_2_235 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[114\\].delay_buf dly_stage\\[114\\].delay_buf/I dly_stage\\[115\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_2_30 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XPHY_EDGE_ROW_22_Left_52 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_15_139 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-X_052_ wire25/Z _100_/Q _101_/Q _053_/B VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__aoi21_1
-XFILLER_14_150 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XTAP_TAPCELL_ROW_16_112 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[66\\].delay_buf dly_stage\\[66\\].delay_buf/I dly_stage\\[67\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_13_104 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_11_131 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_19_231 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_22_71 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[15\\].delay_buf dly_stage\\[15\\].delay_buf/I dly_stage\\[16\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_104_ _105_/Q _104_/RN _107_/CLK _104_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_2
-XFILLER_25_234 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xclkbuf_regs_1_eoc_clk _099_/Q clkbuf_0_eoc_regs/I VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-Xdly_stage\\[235\\].delay_buf dly_stage\\[235\\].delay_buf/I dly_stage\\[236\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[164\\].delay_buf dly_stage\\[164\\].delay_buf/I dly_stage\\[165\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_5_63 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_10_207 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[113\\].delay_buf dly_stage\\[113\\].delay_buf/I dly_stage\\[114\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xclkbuf_1_1__f_eoc_regs clkbuf_0_eoc_regs/Z _095_/CLK VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-XFILLER_27_104 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_27_148 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_18_104 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[65\\].delay_buf dly_stage\\[65\\].delay_buf/I dly_stage\\[66\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_24_107 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XPHY_EDGE_ROW_10_Right_10 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XTAP_TAPCELL_ROW_19_121 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_2_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-X_051_ _090_/Q wire25/I _107_/Q _090_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__mux2_2
-XTAP_TAPCELL_ROW_16_113 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XTAP_TAPCELL_ROW_7_85 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[14\\].delay_buf dly_stage\\[14\\].delay_buf/I dly_stage\\[15\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_13_105 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[234\\].delay_buf dly_stage\\[234\\].delay_buf/I dly_stage\\[235\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_103_ _104_/Q _103_/RN _103_/CLK _103_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_2
-Xdly_stage\\[9\\].delay_buf dly_stage\\[9\\].delay_buf/I dly_stage\\[9\\].delay_buf/Z VDD
-+ VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[163\\].delay_buf dly_stage\\[163\\].delay_buf/I dly_stage\\[164\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_22_216 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XPHY_EDGE_ROW_8_Right_8 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xclkbuf_1_0__f_eoc_regs clkbuf_0_eoc_regs/Z _098_/CLK VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-XFILLER_13_238 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xvalid_clk_xor wire25/Z input1/Z valid_clk_xor/Z VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__xor2_4
-Xdly_stage\\[112\\].delay_buf dly_stage\\[112\\].delay_buf/I dly_stage\\[113\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_0_164 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_5_212 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[64\\].delay_buf dly_stage\\[64\\].delay_buf/I dly_stage\\[65\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_27_138 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_25_72 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[13\\].delay_buf dly_stage\\[13\\].delay_buf/I dly_stage\\[14\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_17_171 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_17_182 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_19_122 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_23_185 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_050_ _050_/I _080_/A2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__inv_1
-XFILLER_14_174 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_16_114 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XTAP_TAPCELL_ROW_7_86 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[8\\].delay_buf dly_stage\\[8\\].delay_buf/I dly_stage\\[9\\].delay_buf/I VDD
-+ VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[233\\].delay_buf dly_stage\\[233\\].delay_buf/I dly_stage\\[234\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_20_155 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_28_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[162\\].delay_buf dly_stage\\[162\\].delay_buf/I dly_stage\\[163\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_11_133 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-X_102_ _103_/Q _102_/RN _107_/CLK _102_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_2
-Xdly_stage\\[111\\].delay_buf dly_stage\\[111\\].delay_buf/I dly_stage\\[112\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_4_76 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[63\\].delay_buf dly_stage\\[63\\].delay_buf/I dly_stage\\[64\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xcomp_trigger_nor comp_trigger_nor/A1 comp_trigger_nor/A2 _066_/A1 comp_trigger_nor/ZN
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor3_4
-XFILLER_0_110 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_10_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[12\\].delay_buf dly_stage\\[12\\].delay_buf/I dly_stage\\[13\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_29_180 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_2_227 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xdly_stage\\[232\\].delay_buf dly_stage\\[232\\].delay_buf/I dly_stage\\[233\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_17_150 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_17_194 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_24_109 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_26_183 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_2_22 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_19_123 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[7\\].delay_buf dly_stage\\[7\\].delay_buf/I dly_stage\\[8\\].delay_buf/I VDD
-+ VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[161\\].delay_buf dly_stage\\[161\\].delay_buf/I dly_stage\\[162\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_23_142 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_23_153 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-XTAP_TAPCELL_ROW_11_97 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XPHY_EDGE_ROW_26_Left_56 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XTAP_TAPCELL_ROW_7_87 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[110\\].delay_buf dly_stage\\[110\\].delay_buf/I dly_stage\\[111\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_11_167 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[129\\].delay_buf dly_stage\\[129\\].delay_buf/I dly_stage\\[130\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_101_ _102_/Q _101_/RN _103_/CLK _101_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_2
-XFILLER_19_212 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_8_10 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[62\\].delay_buf dly_stage\\[62\\].delay_buf/I dly_stage\\[63\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_12_6 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_3_196 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_4_77 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_13_218 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XPHY_EDGE_ROW_13_Left_43 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[11\\].delay_buf dly_stage\\[11\\].delay_buf/I dly_stage\\[12\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_21_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_5_214 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[6\\].delay_buf dly_stage\\[6\\].delay_buf/I dly_stage\\[7\\].delay_buf/I VDD
-+ VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[231\\].delay_buf dly_stage\\[231\\].delay_buf/I dly_stage\\[232\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_1_67 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[160\\].delay_buf dly_stage\\[160\\].delay_buf/I dly_stage\\[161\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_2_239 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[179\\].delay_buf dly_stage\\[179\\].delay_buf/I dly_stage\\[180\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_26_173 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_2_34 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_11_98 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xmax_cap19 _082_/A2 _081_/A2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_2
-Xdly_stage\\[128\\].delay_buf dly_stage\\[128\\].delay_buf/I dly_stage\\[129\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xclkbuf_1_0__f_valid_clk_regs clkbuf_0_valid_clk_regs/Z _107_/CLK VDD VDD VSS VSS
-+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-XPHY_EDGE_ROW_1_Left_31 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[61\\].delay_buf dly_stage\\[61\\].delay_buf/I dly_stage\\[62\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_100_ _101_/Q _100_/RN _103_/CLK _100_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XFILLER_0_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_25_238 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[10\\].delay_buf dly_stage\\[9\\].delay_buf/Z dly_stage\\[11\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_4_78 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[29\\].delay_buf dly_stage\\[29\\].delay_buf/I dly_stage\\[30\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[230\\].delay_buf dly_stage\\[230\\].delay_buf/I dly_stage\\[231\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_0_101 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XPHY_EDGE_ROW_17_Right_17 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XPHY_EDGE_ROW_26_Right_26 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[5\\].delay_buf dly_stage\\[5\\].delay_buf/I dly_stage\\[6\\].delay_buf/I VDD
-+ VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[249\\].delay_buf dly_stage\\[249\\].delay_buf/I dly_stage\\[250\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_5_67 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_5_78 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[178\\].delay_buf dly_stage\\[178\\].delay_buf/I dly_stage\\[179\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_29_160 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_1_68 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[127\\].delay_buf dly_stage\\[127\\].delay_buf/I dly_stage\\[128\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_1_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[60\\].delay_buf dly_stage\\[60\\].delay_buf/I dly_stage\\[61\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_23_133 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_23_199 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_11_99 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XTAP_TAPCELL_ROW_25_139 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[79\\].delay_buf dly_stage\\[79\\].delay_buf/I dly_stage\\[80\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_14_166 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_14_177 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_14_199 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_20_103 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[28\\].delay_buf dly_stage\\[28\\].delay_buf/I dly_stage\\[29\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_25_206 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_26_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[4\\].delay_buf dly_stage\\[4\\].delay_buf/I dly_stage\\[5\\].delay_buf/I VDD
-+ VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[248\\].delay_buf dly_stage\\[248\\].delay_buf/I dly_stage\\[249\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_12_8 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_3_176 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_3_198 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[177\\].delay_buf dly_stage\\[177\\].delay_buf/I dly_stage\\[178\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_0_168 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_8_213 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[126\\].delay_buf dly_stage\\[126\\].delay_buf/I dly_stage\\[127\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_14_22 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_29_172 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_1_69 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[78\\].delay_buf dly_stage\\[78\\].delay_buf/I dly_stage\\[79\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_26_142 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_28_148 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_17_142 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_17_175 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[27\\].delay_buf dly_stage\\[27\\].delay_buf/I dly_stage\\[28\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[3\\].delay_buf dly_stage\\[3\\].delay_buf/I dly_stage\\[4\\].delay_buf/I VDD
-+ VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[247\\].delay_buf dly_stage\\[247\\].delay_buf/I dly_stage\\[248\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_11_148 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[176\\].delay_buf dly_stage\\[176\\].delay_buf/I dly_stage\\[177\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_19_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-XFILLER_25_218 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-X_089_ _089_/D _089_/RN _103_/CLK _089_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-Xdly_stage\\[125\\].delay_buf dly_stage\\[125\\].delay_buf/I dly_stage\\[126\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XPHY_EDGE_ROW_3_Right_3 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_5_69 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_10_6 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XPHY_EDGE_ROW_17_Left_47 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[77\\].delay_buf dly_stage\\[77\\].delay_buf/I dly_stage\\[78\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_5_239 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[26\\].delay_buf dly_stage\\[26\\].delay_buf/I dly_stage\\[27\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_28_149 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xrst_root rst_n _050_/I VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_8
-Xdly_stage\\[2\\].delay_buf dly_stage\\[2\\].delay_buf/I dly_stage\\[3\\].delay_buf/I VDD
-+ VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[246\\].delay_buf dly_stage\\[246\\].delay_buf/I dly_stage\\[247\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_23_146 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_14_113 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[175\\].delay_buf dly_stage\\[175\\].delay_buf/I dly_stage\\[176\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_19_216 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_22_34 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XPHY_EDGE_ROW_5_Left_35 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[124\\].delay_buf dly_stage\\[124\\].delay_buf/I dly_stage\\[125\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_10_160 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_8_14 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_12_100 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-X_088_ _088_/D _088_/RN _103_/CLK _088_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XTAP_TAPCELL_ROW_8_90 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[76\\].delay_buf dly_stage\\[76\\].delay_buf/I dly_stage\\[77\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_0_70 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_12_211 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_8_237 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XPHY_EDGE_ROW_13_Right_13 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XPHY_EDGE_ROW_22_Right_22 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XTAP_TAPCELL_ROW_5_80 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[25\\].delay_buf dly_stage\\[25\\].delay_buf/I dly_stage\\[26\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_5_207 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[245\\].delay_buf dly_stage\\[245\\].delay_buf/I dly_stage\\[246\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[1\\].delay_buf dly_stage\\[1\\].delay_buf/I dly_stage\\[2\\].delay_buf/I VDD
-+ VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_26_144 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[174\\].delay_buf dly_stage\\[174\\].delay_buf/I dly_stage\\[175\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_17_122 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_26_199 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_9_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XTAP_TAPCELL_ROW_2_70 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[123\\].delay_buf dly_stage\\[123\\].delay_buf/I dly_stage\\[124\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_13_191 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_20_139 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XPHY_EDGE_ROW_21_Left_51 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_19_239 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_8_37 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_12_101 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[75\\].delay_buf dly_stage\\[75\\].delay_buf/I dly_stage\\[76\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_087_ _087_/D _087_/RN _103_/CLK _087_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XFILLER_24_220 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[24\\].delay_buf dly_stage\\[24\\].delay_buf/I dly_stage\\[25\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_21_212 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_24_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-XFILLER_28_34 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[244\\].delay_buf dly_stage\\[244\\].delay_buf/I dly_stage\\[245\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[0\\].delay_buf comp_trigger_nor/ZN dly_stage\\[1\\].delay_buf/I VDD VDD VSS
-+ VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_5_81 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[173\\].delay_buf dly_stage\\[173\\].delay_buf/I dly_stage\\[174\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_29_120 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[122\\].delay_buf dly_stage\\[122\\].delay_buf/I dly_stage\\[123\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_25_68 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_26_101 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_26_134 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_23_104 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_2_71 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_14_115 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_23_137 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[74\\].delay_buf dly_stage\\[74\\].delay_buf/I dly_stage\\[75\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_20_107 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-XTAP_TAPCELL_ROW_15_110 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_19_218 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_27_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_12_102 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[23\\].delay_buf dly_stage\\[23\\].delay_buf/I dly_stage\\[24\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_086_ _086_/D _086_/RN _103_/CLK _086_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-Xclkbuf_regs_0_valid_clk valid_clk_xor/Z clkbuf_regs_0_valid_clk/Z VDD VDD VSS VSS
-+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-XFILLER_24_210 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xdly_stage\\[243\\].delay_buf dly_stage\\[243\\].delay_buf/I dly_stage\\[244\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_17_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[172\\].delay_buf dly_stage\\[172\\].delay_buf/I dly_stage\\[173\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_069_ _079_/A1 _082_/A2 _103_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XFILLER_21_202 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_12_235 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_8_217 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_14_37 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XPHY_EDGE_ROW_7_Right_7 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[121\\].delay_buf dly_stage\\[121\\].delay_buf/I dly_stage\\[122\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_5_209 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_4_231 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_1_212 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_25_36 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-XFILLER_26_157 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-Xdly_stage\\[73\\].delay_buf dly_stage\\[73\\].delay_buf/I dly_stage\\[74\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xclkbuf_0_eoc _099_/Q clkbuf_0_eoc/Z VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkbuf_16
-XFILLER_17_157 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_2_18 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XTAP_TAPCELL_ROW_2_72 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[22\\].delay_buf dly_stage\\[22\\].delay_buf/I dly_stage\\[23\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_15_111 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[242\\].delay_buf dly_stage\\[242\\].delay_buf/I dly_stage\\[243\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_10_185 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[171\\].delay_buf dly_stage\\[171\\].delay_buf/I dly_stage\\[172\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_085_ _085_/D _085_/RN _107_/CLK _085_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XPHY_EDGE_ROW_9_Left_39 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[120\\].delay_buf dly_stage\\[120\\].delay_buf/I dly_stage\\[121\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_068_ _081_/A1 _081_/A2 _102_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XFILLER_0_62 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_21_236 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[139\\].delay_buf dly_stage\\[139\\].delay_buf/I dly_stage\\[140\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_7_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[72\\].delay_buf dly_stage\\[72\\].delay_buf/I dly_stage\\[73\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_29_144 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_29_199 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[21\\].delay_buf dly_stage\\[21\\].delay_buf/I dly_stage\\[22\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_23_117 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_23_139 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_18_120 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[241\\].delay_buf dly_stage\\[241\\].delay_buf/I dly_stage\\[242\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_7_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-Xdly_stage\\[170\\].delay_buf dly_stage\\[170\\].delay_buf/I dly_stage\\[171\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[189\\].delay_buf dly_stage\\[189\\].delay_buf/I dly_stage\\[190\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_19_209 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_27_220 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XPHY_EDGE_ROW_29_Right_29 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[209\\].delay_buf dly_stage\\[209\\].delay_buf/I dly_stage\\[210\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_10_197 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XPHY_EDGE_ROW_25_Left_55 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[138\\].delay_buf dly_stage\\[138\\].delay_buf/I dly_stage\\[139\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_084_ _084_/D _084_/RN _107_/CLK _084_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
-XFILLER_15_212 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[71\\].delay_buf dly_stage\\[71\\].delay_buf/I dly_stage\\[72\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_0_52 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_2_171 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-X_067_ _079_/A1 _082_/A2 _101_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XFILLER_28_37 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_64
-XFILLER_22_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[20\\].delay_buf dly_stage\\[20\\].delay_buf/I dly_stage\\[21\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XPHY_EDGE_ROW_12_Left_42 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[39\\].delay_buf dly_stage\\[39\\].delay_buf/I dly_stage\\[40\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_20_71 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[240\\].delay_buf dly_stage\\[240\\].delay_buf/I dly_stage\\[241\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_26_115 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_6_73 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[259\\].delay_buf dly_stage\\[259\\].delay_buf/I comp_trigger_driver/I VDD
-+ VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_17_137 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_1_236 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_25_192 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[188\\].delay_buf dly_stage\\[188\\].delay_buf/I dly_stage\\[189\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_16_170 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[208\\].delay_buf dly_stage\\[208\\].delay_buf/I dly_stage\\[209\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_13_195 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[137\\].delay_buf dly_stage\\[137\\].delay_buf/I dly_stage\\[138\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_21_127 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xwire25 wire25/I wire25/Z VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_2
-XFILLER_27_232 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XPHY_EDGE_ROW_0_Left_30 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[70\\].delay_buf dly_stage\\[70\\].delay_buf/I dly_stage\\[71\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_083_ _083_/D _083_/RN _107_/CLK _083_/Q VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dffrnq_2
-XFILLER_5_180 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[89\\].delay_buf dly_stage\\[89\\].delay_buf/I dly_stage\\[90\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_21_216 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[38\\].delay_buf dly_stage\\[38\\].delay_buf/I dly_stage\\[39\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_066_ _066_/A1 _082_/A2 _100_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XFILLER_12_227 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-X_049_ _083_/Q _065_/A1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkinv_1
-XFILLER_14_18 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_15_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[258\\].delay_buf dly_stage\\[258\\].delay_buf/I dly_stage\\[259\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_29_168 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_29_70 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[187\\].delay_buf dly_stage\\[187\\].delay_buf/I dly_stage\\[188\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[207\\].delay_buf dly_stage\\[207\\].delay_buf/I dly_stage\\[208\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[136\\].delay_buf dly_stage\\[136\\].delay_buf/I dly_stage\\[137\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_15_61 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_15_72 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_16_160 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xoutput3 _089_/Q dac_ctrl[0] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-XFILLER_22_174 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_22_185 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XTAP_TAPCELL_ROW_24_136 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[88\\].delay_buf dly_stage\\[88\\].delay_buf/I dly_stage\\[89\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_21_128 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_10_177 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-X_082_ _082_/A1 _082_/A2 _099_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-Xdly_stage\\[37\\].delay_buf dly_stage\\[37\\].delay_buf/I dly_stage\\[38\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_15_214 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_0_10 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_23_72 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-Xdly_stage\\[257\\].delay_buf dly_stage\\[257\\].delay_buf/I dly_stage\\[258\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_065_ _065_/A1 _106_/Q _065_/B _108_/D _083_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__oai211_2
-XFILLER_12_239 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[186\\].delay_buf dly_stage\\[186\\].delay_buf/I dly_stage\\[187\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[206\\].delay_buf dly_stage\\[206\\].delay_buf/I dly_stage\\[207\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_048_ _084_/Q _063_/A1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkinv_1
-XFILLER_20_84 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[135\\].delay_buf dly_stage\\[135\\].delay_buf/I dly_stage\\[136\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_17_139 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_27_145 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[87\\].delay_buf dly_stage\\[87\\].delay_buf/I dly_stage\\[88\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xoutput4 _088_/Q dac_ctrl[1] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-XTAP_TAPCELL_ROW_24_137 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_13_142 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_13_153 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XFILLER_13_197 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[36\\].delay_buf dly_stage\\[36\\].delay_buf/I dly_stage\\[37\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XTAP_TAPCELL_ROW_21_129 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-XFILLER_10_189 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_27_212 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-X_081_ _081_/A1 _081_/A2 _081_/ZN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-XPHY_EDGE_ROW_16_Right_16 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XPHY_EDGE_ROW_25_Right_25 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[256\\].delay_buf dly_stage\\[256\\].delay_buf/I dly_stage\\[257\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[185\\].delay_buf dly_stage\\[185\\].delay_buf/I dly_stage\\[186\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_0_33 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_15_204 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XPHY_EDGE_ROW_29_Left_59 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[205\\].delay_buf dly_stage\\[205\\].delay_buf/I dly_stage\\[206\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-X_064_ wire25/Z _106_/Q _065_/B VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nand2_2
-XFILLER_0_66 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_0_99 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[134\\].delay_buf dly_stage\\[134\\].delay_buf/I dly_stage\\[135\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_11_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-X_047_ _085_/Q _061_/A1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkinv_1
-XFILLER_29_104 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-XPHY_EDGE_ROW_2_Right_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-Xdly_stage\\[86\\].delay_buf dly_stage\\[86\\].delay_buf/I dly_stage\\[87\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_20_96 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_1_228 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_20_2 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_32
-XFILLER_26_107 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XPHY_EDGE_ROW_16_Left_46 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-XFILLER_17_129 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_25_184 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_27_146 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xoutput5 _087_/Q dac_ctrl[2] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-Xdly_stage\\[35\\].delay_buf dly_stage\\[35\\].delay_buf/I dly_stage\\[36\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_16_195 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XFILLER_22_187 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XTAP_TAPCELL_ROW_24_138 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xdly_stage\\[255\\].delay_buf dly_stage\\[255\\].delay_buf/I dly_stage\\[256\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_3_66 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-Xdly_stage\\[184\\].delay_buf dly_stage\\[184\\].delay_buf/I dly_stage\\[185\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_10_168 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_27_202 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XFILLER_27_224 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_080_ _082_/A1 _080_/A2 _089_/RN VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__nor2_1
-Xdly_stage\\[204\\].delay_buf dly_stage\\[204\\].delay_buf/I dly_stage\\[205\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[133\\].delay_buf dly_stage\\[133\\].delay_buf/I dly_stage\\[134\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XPHY_EDGE_ROW_4_Left_34 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__endcap
-X_063_ _063_/A1 _105_/Q _063_/B _084_/D VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__oai21_1
-XFILLER_0_56 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-XFILLER_18_41 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_2
-Xdly_stage\\[85\\].delay_buf dly_stage\\[85\\].delay_buf/I dly_stage\\[86\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_7_212 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-X_046_ _086_/Q _059_/A1 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__clkinv_1
-Xdly_stage\\[34\\].delay_buf dly_stage\\[34\\].delay_buf/I dly_stage\\[35\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-Xdly_stage\\[254\\].delay_buf dly_stage\\[254\\].delay_buf/I dly_stage\\[255\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-XFILLER_15_20 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_25_130 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fillcap_8
-XTAP_TAPCELL_ROW_27_147 VDD VSS gf180mcu_fd_sc_mcu7t5v0__filltie
-Xoutput6 _086_/Q dac_ctrl[3] VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__dlyd_1
-XFILLER_0_240 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-XFILLER_16_174 VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__fill_1
-Xdly_stage\\[183\\].delay_buf dly_stage\\[183\\].delay_buf/I dly_stage\\[184\\].delay_buf/I
-+ VDD VDD VSS VSS gf180mcu_fd_sc_mcu7t5v0__buf_1
-.ends
+.include /foss/designs/chipathon-2026-ti-adc/analog/digital/SAR_ADC_LOGIC/sar_adc_logic.spice
+.include /foss/designs/chipathon-2026-ti-adc/analog/blocks/IDcomparator/IDcomparator.spice
 "}
-C {lab_wire.sym} 210 -790 0 0 {name=p10 sig_type=std_logic lab=CLK}
+C {lab_wire.sym} 150 -910 0 0 {name=p10 sig_type=std_logic lab=CLK}
 C {lab_wire.sym} 1160 -830 0 0 {name=p12 sig_type=std_logic lab=VRef}
-C {lab_wire.sym} 700 -1120 0 0 {name=p7 sig_type=std_logic lab=CLK}
-C {lab_wire.sym} 350 -940 0 0 {name=p14 sig_type=std_logic lab=VDD}
-C {lab_wire.sym} 700 -1100 0 0 {name=p4 sig_type=std_logic lab=VIN}
-C {lab_wire.sym} 210 -670 0 0 {name=p6 sig_type=std_logic lab=RST}
-C {lab_pin.sym} -665 -1000 1 0 {name=p28 sig_type=std_logic lab=CLK}
-C {vsource.sym} -665 -930 0 0 {name=V8 
-value= "PULSE(0 3.3 0 50p 50p 1250n 2500n)"
-savecurrent=false}
-C {gnd.sym} -665 -860 0 0 {name=l9 lab=0}
-C {vsource.sym} -660 -700 0 0 {name=V3 
-value=3.3
-savecurrent=false}
-C {gnd.sym} -660 -630 0 0 {name=l3 lab=0}
-C {lab_pin.sym} -660 -770 1 0 {name=p30 sig_type=std_logic lab=VDD}
-C {vsource.sym} -550 -700 0 0 {name=V1 
-value="PULSE(3.3 0 0 1n 1n 15n 100000n)"
-savecurrent=false}
-C {gnd.sym} -550 -630 0 0 {name=l2 lab=0}
-C {lab_pin.sym} -550 -770 1 0 {name=p16 sig_type=std_logic lab=RST}
-C {lab_wire.sym} 760 -960 0 0 {name=p17 sig_type=std_logic lab=VDD}
-C {vsource.sym} -850 -930 0 0 {name=V6 
-value=0.2
-savecurrent=false}
-C {lab_pin.sym} -850 -1000 1 0 {name=p19 sig_type=std_logic lab=VIN}
-C {gnd.sym} -850 -860 0 0 {name=l6 lab=0}
-C {lab_wire.sym} 490 -710 2 0 {name=p20 sig_type=std_logic lab=DOUT0}
-C {lab_wire.sym} 490 -690 2 0 {name=p21 sig_type=std_logic lab=DOUT1}
-C {lab_wire.sym} 490 -670 2 0 {name=p22 sig_type=std_logic lab=DOUT2}
-C {lab_wire.sym} 490 -650 2 0 {name=p23 sig_type=std_logic lab=DOUT3}
-C {lab_wire.sym} 490 -630 2 0 {name=p24 sig_type=std_logic lab=DOUT4}
-C {lab_wire.sym} 490 -610 2 0 {name=p25 sig_type=std_logic lab=DOUT5}
-C {lab_wire.sym} 490 -590 2 0 {name=p26 sig_type=std_logic lab=DOUT6}
-C {lab_wire.sym} 490 -570 2 0 {name=p27 sig_type=std_logic lab=DOUT7}
+C {lab_wire.sym} 700 -1100 0 0 {name=p7 sig_type=std_logic lab=phi_bottom}
+C {lab_wire.sym} 350 -940 0 0 {name=p14 sig_type=std_logic lab=VDDig}
+C {lab_wire.sym} 700 -1080 0 0 {name=p4 sig_type=std_logic lab=VIN}
+C {lab_wire.sym} 210 -650 0 0 {name=p6 sig_type=std_logic lab=RST}
+C {lab_wire.sym} 490 -550 2 0 {name=p20 sig_type=std_logic lab=DOUT0}
+C {lab_wire.sym} 490 -530 2 0 {name=p21 sig_type=std_logic lab=DOUT1}
+C {lab_wire.sym} 490 -510 2 0 {name=p22 sig_type=std_logic lab=DOUT2}
+C {lab_wire.sym} 490 -490 2 0 {name=p23 sig_type=std_logic lab=DOUT3}
+C {lab_wire.sym} 490 -470 2 0 {name=p24 sig_type=std_logic lab=DOUT4}
+C {lab_wire.sym} 490 -450 2 0 {name=p25 sig_type=std_logic lab=DOUT5}
+C {lab_wire.sym} 490 -430 2 0 {name=p26 sig_type=std_logic lab=DOUT6}
+C {lab_wire.sym} 490 -410 2 0 {name=p27 sig_type=std_logic lab=DOUT7}
 C {code_shown.sym} -1320 -1410 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -1399,58 +182,61 @@ value="
 .lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice cap_mim
 .lib "/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice" mimcap_typical
 "}
-C {code_shown.sym} -1360 -1240 0 0 {name=s3 only_toplevel=true 
-value="
-.tran 10n 1000n uic
-.ic v(VX)=1.65 v(VX_LSB)=1.65
-
-.control
-run
-wrdata trans_gate.txt v(vin) v(vsample) v(clk)
-wrdata comparator.txt v(clk_o) v(outp) v(outn) v(clk)
-wrdata logic.txt v(ctrl0) v(ctrl1) v(ctrl2) v(ctrl3) v(ctrl4) v(ctrl5) v(ctrl6) v(ctrl7) v(dout0) v(dout1) v(dout2) v(dout3) v(dout4) v(dout5) v(dout6) v(dout7) v(clk)
-wrdata cdac.txt v(vref) v(vx) v(vx_lsb) v(vsample)
-.endc
-"}
-C {vsource.sym} -750 -700 0 0 {name=V2 
-value=1.8
-savecurrent=false}
-C {gnd.sym} -750 -630 0 0 {name=l4 lab=0}
-C {lab_pin.sym} -750 -770 1 0 {name=p29 sig_type=std_logic lab=VRef}
-C {gnd.sym} -20 -620 0 0 {name=l5 lab=0}
-C {gnd.sym} 350 -490 0 0 {name=l7 lab=0}
-C {gnd.sym} 770 -670 0 0 {name=l8 lab=0}
-C {gnd.sym} 1160 -910 1 0 {name=l10 lab=0}
+C {gnd.sym} -90 -570 0 0 {name=l5 lab=0}
+C {gnd.sym} 350 -310 0 0 {name=l7 lab=0}
+C {gnd.sym} 1120 -890 1 0 {name=l10 lab=0}
 C {gnd.sym} 880 -1020 0 0 {name=l11 lab=0}
-C {lab_wire.sym} 110 -720 2 0 {name=p3 sig_type=std_logic lab=OUTP}
-C {lab_wire.sym} 1500 -1100 0 0 {name=p11 sig_type=std_logic lab=VX}
-C {lab_wire.sym} 1540 -1010 2 0 {name=p13 sig_type=std_logic lab=VX_LSB}
-C {lab_wire.sym} 1030 -1030 0 0 {name=p15 sig_type=std_logic lab=VSAMPLE}
-C {lab_pin.sym} -1005 -780 1 0 {name=p5 sig_type=std_logic lab=CLK_N}
-C {vsource.sym} -1005 -710 0 0 {name=V9 
-value= "PULSE(3.3 0 0 50p 50p 40n 80n)"
-savecurrent=false}
-C {gnd.sym} -1005 -640 0 0 {name=l1 lab=0}
-C {lab_wire.sym} 500 -880 2 0 {name=p18 sig_type=std_logic lab=CTRL0}
-C {lab_wire.sym} 500 -860 2 0 {name=p31 sig_type=std_logic lab=CTRL1}
-C {lab_wire.sym} 500 -840 2 0 {name=p32 sig_type=std_logic lab=CTRL2}
-C {lab_wire.sym} 500 -820 2 0 {name=p33 sig_type=std_logic lab=CTRL3}
-C {lab_wire.sym} 500 -800 2 0 {name=p34 sig_type=std_logic lab=CTRL4}
-C {lab_wire.sym} 500 -780 2 0 {name=p35 sig_type=std_logic lab=CTRL5}
-C {lab_wire.sym} 490 -760 2 0 {name=p36 sig_type=std_logic lab=CTRL6}
-C {lab_wire.sym} 500 -740 2 0 {name=p37 sig_type=std_logic lab=CTRL7}
-C {lab_wire.sym} 120 -780 0 0 {name=p38 sig_type=std_logic lab=CLK_O}
-C {lab_wire.sym} 110 -680 2 0 {name=p39 sig_type=std_logic lab=OUTN}
-C {chipathon-2026-ti-adc/analog/blocks/Double_Tail_Comparator/realcomp.sym} -20 -700 0 0 {name=x3}
-C {chipathon-2026-ti-adc/analog/top/inverter_block.sym} 750 -810 0 0 {name=x4}
-C {chipathon-2026-ti-adc/analog/blocks/transmission_gate/transmission_gate.sym} 880 -1100 0 0 {name=x6}
-C {proj_branch/chipathon-2026-ti-adc/analog/digital/SAR_ADC_LOGIC/sar_logic.sym} 340 -730 0 0 {name=X1 model=sar_adc_logic}
-C {proj_branch/chipathon-2026-ti-adc/analog/blocks/cdac/caps2.sym} 1350 -790 0 0 {name=x2}
+C {lab_wire.sym} 1500 -1100 0 0 {name=p11 sig_type=std_logic lab=VX
+value=".include /foss/designs/chipathon-2026-ti-adc/analog/digital/SAR_ADC_LOGIC/sar_adc_logic.spice"}
+C {lab_wire.sym} 40 -830 0 0 {name=p38 sig_type=std_logic lab=CLK_O}
 C {lab_wire.sym} 1160 -1030 0 0 {name=p42 sig_type=std_logic lab=VDD}
-C {lab_wire.sym} 1160 -890 0 0 {name=p43 sig_type=std_logic lab=VDD}
-C {gnd.sym} 1160 -630 1 0 {name=l12 lab=0}
-C {gnd.sym} 1160 -750 1 0 {name=l13 lab=0}
-C {vsource.sym} -200 -650 0 0 {name=V4 
-value=0.9
-savecurrent=false}
-C {gnd.sym} -200 -580 0 0 {name=l14 lab=0}
+C {lab_wire.sym} 1160 -910 0 0 {name=p43 sig_type=std_logic lab=VDD}
+C {gnd.sym} 1200 -610 1 0 {name=l12 lab=0}
+C {gnd.sym} 1160 -730 1 0 {name=l13 lab=0}
+C {lab_pin.sym} -300 -660 0 0 {name=p44 sig_type=std_logic lab=VCM}
+C {lab_pin.sym} 1200 -530 0 0 {name=p45 sig_type=std_logic lab=VCM}
+C {lab_wire.sym} 210 -810 0 0 {name=p46 sig_type=std_logic lab=phi_top}
+C {lab_wire.sym} 210 -790 0 0 {name=p47 sig_type=std_logic lab=phi_top_n}
+C {lab_wire.sym} 210 -770 0 0 {name=p48 sig_type=std_logic lab=phi_bottom}
+C {lab_wire.sym} 210 -750 0 0 {name=p49 sig_type=std_logic lab=phi_bottom_n}
+C {lab_wire.sym} 1200 -590 0 0 {name=p40 sig_type=std_logic lab=phi_bottom}
+C {lab_wire.sym} 1200 -570 0 0 {name=p50 sig_type=std_logic lab=phi_bottom_n}
+C {lab_wire.sym} 1200 -770 0 0 {name=p51 sig_type=std_logic lab=phi_top}
+C {lab_wire.sym} 1160 -790 0 0 {name=p8 sig_type=std_logic lab=phi_top_n}
+C {lab_wire.sym} 700 -1120 0 0 {name=p17 sig_type=std_logic lab=phi_bottom_n}
+C {chipathon-2026-ti-adc/analog/blocks/transmission_gate/transmission_gate.sym} 880 -1100 0 0 {name=x2}
+C {chipathon-2026-ti-adc/analog/blocks/cdac/caps2.sym} 1350 -750 0 0 {name=x3}
+C {chipathon-2026-ti-adc/analog/digital/SAR_ADC_LOGIC/sar_logic.sym} 340 -730 0 0 {name=X4}
+C {chipathon-2026-ti-adc/analog/blocks/IDcomparator/IDcomparator.sym} -310 -700 0 0 {name=X1 model=IDcomparator}
+C {iopin.sym} -510 -970 3 0 {name=p5 lab=VSS}
+C {iopin.sym} -570 -970 3 0 {name=p52 lab=VDD}
+C {lab_pin.sym} -570 -910 0 0 {name=p53 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} -510 -910 0 0 {name=p54 sig_type=std_logic lab=VSS}
+C {ipin.sym} -570 -820 1 0 {name=p55 lab=CLK}
+C {lab_pin.sym} -570 -760 0 0 {name=p56 sig_type=std_logic lab=CLK}
+C {ipin.sym} -490 -820 1 0 {name=p57 lab=VRef}
+C {lab_pin.sym} -490 -760 0 0 {name=p58 sig_type=std_logic lab=VRef}
+C {opin.sym} -800 -620 3 0 {name=p59 lab=DOUT7}
+C {ipin.sym} -650 -820 1 0 {name=p61 lab=VCM}
+C {lab_pin.sym} -650 -760 0 0 {name=p62 sig_type=std_logic lab=VCM}
+C {ipin.sym} -730 -820 1 0 {name=p63 lab=VIN}
+C {lab_pin.sym} -730 -760 0 0 {name=p64 sig_type=std_logic lab=VIN}
+C {ipin.sym} -800 -820 1 0 {name=p65 lab=RST}
+C {lab_pin.sym} -800 -760 0 0 {name=p66 sig_type=std_logic lab=RST}
+C {lab_wire.sym} -660 -580 3 0 {name=p16 sig_type=std_logic lab=DOUT0}
+C {lab_wire.sym} -680 -580 3 0 {name=p19 sig_type=std_logic lab=DOUT1}
+C {lab_wire.sym} -700 -580 3 0 {name=p28 sig_type=std_logic lab=DOUT2}
+C {lab_wire.sym} -720 -580 3 0 {name=p29 sig_type=std_logic lab=DOUT3}
+C {lab_wire.sym} -740 -580 3 0 {name=p30 sig_type=std_logic lab=DOUT4}
+C {lab_wire.sym} -760 -580 3 0 {name=p41 sig_type=std_logic lab=DOUT5}
+C {lab_wire.sym} -780 -580 3 0 {name=p67 sig_type=std_logic lab=DOUT6}
+C {lab_wire.sym} -800 -580 3 0 {name=p68 sig_type=std_logic lab=DOUT7}
+C {opin.sym} -780 -620 3 0 {name=p60 lab=DOUT6}
+C {opin.sym} -760 -620 3 0 {name=p69 lab=DOUT5}
+C {opin.sym} -740 -620 3 0 {name=p70 lab=DOUT4}
+C {opin.sym} -720 -620 3 0 {name=p71 lab=DOUT3}
+C {opin.sym} -700 -620 3 0 {name=p72 lab=DOUT2}
+C {opin.sym} -680 -620 3 0 {name=p73 lab=DOUT1}
+C {opin.sym} -660 -620 3 0 {name=p74 lab=DOUT0}
+C {iopin.sym} -650 -970 3 0 {name=p3 lab=VDDig}
+C {lab_pin.sym} -650 -910 0 0 {name=p13 sig_type=std_logic lab=VDDig}
